@@ -100,7 +100,7 @@ flowchart LR
 
 ## Example Payload
 
-See [examples/recipe-example.json](./examples/recipe-example.json) for a reference document.
+See [examples/story/recipe-example.json](./examples/story/recipe-example.json) for a reference document.
 
 ## How To Adopt UMF
 
