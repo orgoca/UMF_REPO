@@ -92,18 +92,18 @@ flowchart LR
     class Vendor vendor;
     class Service service;
 
-    linkStyle 0 stroke:#D19A3E,stroke-width:2px,color:#D19A3E;
-    linkStyle 1 stroke:#D19A3E,stroke-width:2px,color:#D19A3E;
-    linkStyle 2 stroke:#4A78D1,stroke-width:2px,color:#4A78D1;
-    linkStyle 3 stroke:#C07AE8,stroke-width:2px,color:#C07AE8;
-    linkStyle 4 stroke:#D2CF34,stroke-width:2px,color:#D2CF34;
-    linkStyle 5 stroke:#D3D3D3,stroke-width:2px,color:#D3D3D3;
-    linkStyle 6 stroke:#2A5FFF,stroke-width:2px,color:#2A5FFF;
-    linkStyle 7 stroke:#2A5FFF,stroke-width:2px,color:#2A5FFF;
-    linkStyle 8 stroke:#D38CFF,stroke-width:2px,color:#D38CFF;
-    linkStyle 9 stroke:#66D96A,stroke-width:2px,color:#66D96A;
-    linkStyle 10 stroke:#FF4A4A,stroke-width:2px,color:#FF4A4A;
-    linkStyle 11 stroke:#D38CFF,stroke-width:2px,color:#D38CFF;
+    linkStyle 0 stroke:#D19A3E,stroke-width:2px;
+    linkStyle 1 stroke:#D19A3E,stroke-width:2px;
+    linkStyle 2 stroke:#4A78D1,stroke-width:2px;
+    linkStyle 3 stroke:#C07AE8,stroke-width:2px;
+    linkStyle 4 stroke:#D2CF34,stroke-width:2px;
+    linkStyle 5 stroke:#D3D3D3,stroke-width:2px;
+    linkStyle 6 stroke:#2A5FFF,stroke-width:2px;
+    linkStyle 7 stroke:#2A5FFF,stroke-width:2px;
+    linkStyle 8 stroke:#D38CFF,stroke-width:2px;
+    linkStyle 9 stroke:#66D96A,stroke-width:2px;
+    linkStyle 10 stroke:#FF4A4A,stroke-width:2px;
+    linkStyle 11 stroke:#D38CFF,stroke-width:2px;
 ```
 
 ## Repository Layout
