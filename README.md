@@ -42,56 +42,68 @@ UMF currently defines nine first-class entity schemas:
 ## UMF Knowledge Graph
 
 ```mermaid
-flowchart TD
-    %% -- Controlled Vocabulary nodes --
-    MT([meal_type])
-    CT([cuisine_type])
+%%{init: {"theme":"base"}}%%
+flowchart LR
+    MT["Meal Type"]
+    CT["Cuisine Type"]
+    Chef["Chef"]
+    Recipe["Recipe"]
+    Technique["Technique"]
+    Ingredient["Ingredient"]
+    Taxonomy["Taxonomy"]
+    Collection["Collection"]
+    Menu["Menu"]
+    Product["Product"]
+    Vendor["Vendor"]
+    Service["Service"]
 
-    %% -- Knowledge Layer --
-    subgraph KNOWLEDGE["KNOWLEDGE LAYER"]
-        MT
-        CT
-        Chef
-        Recipe
-        Technique
-        Ingredient
-        Taxonomy
-    end
-
-    %% -- Curation Layer --
-    subgraph CURATION["CURATION LAYER"]
-        Collection
-        Menu
-    end
-
-    %% -- Commercial Layer --
-    subgraph COMMERCIAL["COMMERCIAL LAYER"]
-        Service
-        Product
-        Vendor
-    end
-
-    %% -- Knowledge edges --
     MT -->|classifies| Recipe
     CT -->|classifies| Recipe
     Chef -->|creates| Recipe
     Recipe -->|uses| Technique
     Recipe -->|uses| Ingredient
     Ingredient -->|classified by| Taxonomy
-
-    %% -- Knowledge -> Curation --
     Recipe -->|grouped into| Collection
     Recipe -->|composed into| Menu
-
-    %% -- Curation -> Commercial --
     Menu -->|executed by| Service
-
-    %% -- Knowledge -> Commercial --
     Ingredient -->|instantiated as| Product
-
-    %% -- Commercial edges --
     Product -->|sold by| Vendor
     Vendor -->|sources from| Service
+
+    classDef vocab fill:#6B4A2E,stroke:#C49A6C,stroke-width:1.5px,color:#FFFFFF;
+    classDef people fill:#1F3A5F,stroke:#88A6D4,stroke-width:1.5px,color:#FFFFFF;
+    classDef core fill:#2F6B3A,stroke:#8FCF99,stroke-width:1.8px,color:#FFFFFF;
+    classDef method fill:#5F2E6B,stroke:#C79AD4,stroke-width:1.5px,color:#FFFFFF;
+    classDef ingredient fill:#6A6B2E,stroke:#D3D48E,stroke-width:1.5px,color:#FFFFFF;
+    classDef taxonomy fill:#6A6A6A,stroke:#BFBFBF,stroke-width:1.5px,color:#FFFFFF;
+    classDef curation fill:#274A7A,stroke:#90B6E9,stroke-width:1.5px,color:#FFFFFF;
+    classDef commercial fill:#2E6B3A,stroke:#8FD29D,stroke-width:1.5px,color:#FFFFFF;
+    classDef vendor fill:#6B2E2E,stroke:#D49797,stroke-width:1.5px,color:#FFFFFF;
+    classDef service fill:#5A2E6B,stroke:#C99BDA,stroke-width:1.5px,color:#FFFFFF;
+
+    class MT,CT vocab;
+    class Chef people;
+    class Recipe core;
+    class Technique method;
+    class Ingredient ingredient;
+    class Taxonomy taxonomy;
+    class Collection,Menu curation;
+    class Product commercial;
+    class Vendor vendor;
+    class Service service;
+
+    linkStyle 0 stroke:#D19A3E,stroke-width:2px,color:#D19A3E;
+    linkStyle 1 stroke:#D19A3E,stroke-width:2px,color:#D19A3E;
+    linkStyle 2 stroke:#4A78D1,stroke-width:2px,color:#4A78D1;
+    linkStyle 3 stroke:#C07AE8,stroke-width:2px,color:#C07AE8;
+    linkStyle 4 stroke:#D2CF34,stroke-width:2px,color:#D2CF34;
+    linkStyle 5 stroke:#D3D3D3,stroke-width:2px,color:#D3D3D3;
+    linkStyle 6 stroke:#2A5FFF,stroke-width:2px,color:#2A5FFF;
+    linkStyle 7 stroke:#2A5FFF,stroke-width:2px,color:#2A5FFF;
+    linkStyle 8 stroke:#D38CFF,stroke-width:2px,color:#D38CFF;
+    linkStyle 9 stroke:#66D96A,stroke-width:2px,color:#66D96A;
+    linkStyle 10 stroke:#FF4A4A,stroke-width:2px,color:#FF4A4A;
+    linkStyle 11 stroke:#D38CFF,stroke-width:2px,color:#D38CFF;
 ```
 
 ## Repository Layout
