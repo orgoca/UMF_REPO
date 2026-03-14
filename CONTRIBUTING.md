@@ -26,6 +26,7 @@ Every PR should include:
 3. Compatibility assessment.
 4. Migration notes when applicable.
 5. Documentation updates when semantics changed.
+6. ADR update (or explicit ADR rationale) for normative governance changes.
 
 ## Schema Change Checklist
 
@@ -45,6 +46,10 @@ Use semantic intent:
 - Major for breaking changes.
 
 If uncertain, open an issue before implementing the change.
+
+## Changelog Discipline
+
+Material spec/governance changes should update [CHANGELOG.md](./CHANGELOG.md) in the same pull request.
 
 ## Publication Alignment
 

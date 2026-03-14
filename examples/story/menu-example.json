@@ -76,5 +76,6 @@
         "notes": "Reframed as a single-seating curated wedding dinner menu."
       }
     ]
-  }
+  },
+  "schema_version": "1.0"
 }

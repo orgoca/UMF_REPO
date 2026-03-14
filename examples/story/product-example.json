@@ -82,5 +82,6 @@
         "notes": "Initial canonical product example."
       }
     ]
-  }
+  },
+  "schema_version": "1.0"
 }

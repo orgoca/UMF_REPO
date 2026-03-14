@@ -5,8 +5,7 @@
   "type": "object",
   "required": [
     "id",
-    "canonicalName",
-    "formatVersion"
+    "canonicalName"
   ],
   "additionalProperties": false,
   "properties": {
@@ -17,7 +16,8 @@
       "type": "string"
     },
     "formatVersion": {
-      "type": "string"
+      "type": "string",
+      "description": "Legacy alias for schema_version. Maintained for backward compatibility."
     },
     "classification": {
       "type": "object",
@@ -55,8 +55,21 @@
     "dietaryFlags": {
       "type": "array",
       "items": {
-        "type": "string"
-      }
+        "type": "string",
+        "enum": [
+          "vegan",
+          "vegetarian",
+          "pescatarian",
+          "gluten_free",
+          "nut_free",
+          "dairy_free",
+          "egg_free",
+          "soy_free",
+          "sesame_free",
+          "alcohol_free"
+        ]
+      },
+      "description": "Deterministic dietary flags from controlled presets vocabulary."
     },
     "variations": {
       "type": "array",
@@ -132,6 +145,22 @@
           "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
         }
       }
+    },
+    "schema_version": {
+      "type": "string",
+      "description": "Canonical schema version identifier. Prefer this field for new implementations."
     }
-  }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "schema_version"
+      ]
+    },
+    {
+      "required": [
+        "formatVersion"
+      ]
+    }
+  ]
 }

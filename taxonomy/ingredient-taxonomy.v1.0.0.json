@@ -1,0 +1,248 @@
+{
+  "id": "umf-ingredient-taxonomy",
+  "title": "UMF Ingredient Taxonomy",
+  "taxonomy_version": "1.0.0",
+  "schema_version": "1.0",
+  "top_level_category_count": 18,
+  "leaf_count": 130,
+  "top_level_categories": [
+    {
+      "id": "vegetables",
+      "label": "Vegetables",
+      "leaf_nodes": [
+        "allium",
+        "root_vegetable",
+        "leafy_green",
+        "cruciferous",
+        "nightshade",
+        "squash_gourd",
+        "stem_vegetable",
+        "sea_vegetable"
+      ]
+    },
+    {
+      "id": "fruits",
+      "label": "Fruits",
+      "leaf_nodes": [
+        "citrus",
+        "berry",
+        "stone_fruit",
+        "pome_fruit",
+        "tropical_fruit",
+        "dried_fruit",
+        "melon"
+      ]
+    },
+    {
+      "id": "herbs_and_aromatics",
+      "label": "Herbs And Aromatics",
+      "leaf_nodes": [
+        "fresh_herb",
+        "dried_herb",
+        "aromatic_root",
+        "aromatic_stem",
+        "aromatic_leaf",
+        "aromatic_flower",
+        "aromatic_seed"
+      ]
+    },
+    {
+      "id": "grains_and_cereals",
+      "label": "Grains And Cereals",
+      "leaf_nodes": [
+        "wheat",
+        "rice",
+        "corn_maize",
+        "oats",
+        "barley",
+        "rye",
+        "ancient_grain"
+      ]
+    },
+    {
+      "id": "legumes_and_pulses",
+      "label": "Legumes And Pulses",
+      "leaf_nodes": [
+        "bean",
+        "lentil",
+        "chickpea",
+        "pea",
+        "broad_bean",
+        "soy_legume",
+        "lupin"
+      ]
+    },
+    {
+      "id": "nuts_and_seeds",
+      "label": "Nuts And Seeds",
+      "leaf_nodes": [
+        "tree_nut",
+        "peanut",
+        "sesame_seed",
+        "sunflower_seed",
+        "pumpkin_seed",
+        "chia_seed",
+        "flax_seed"
+      ]
+    },
+    {
+      "id": "dairy_and_eggs",
+      "label": "Dairy And Eggs",
+      "leaf_nodes": [
+        "milk",
+        "cultured_dairy",
+        "cheese_fresh",
+        "cheese_aged",
+        "cream_butter",
+        "yogurt_kefir",
+        "egg"
+      ]
+    },
+    {
+      "id": "meats",
+      "label": "Meats",
+      "leaf_nodes": [
+        "beef",
+        "pork",
+        "lamb",
+        "goat",
+        "veal",
+        "game_meat",
+        "organ_meat"
+      ]
+    },
+    {
+      "id": "poultry",
+      "label": "Poultry",
+      "leaf_nodes": [
+        "chicken",
+        "turkey",
+        "duck",
+        "goose",
+        "quail",
+        "game_bird",
+        "poultry_offal"
+      ]
+    },
+    {
+      "id": "seafood",
+      "label": "Seafood",
+      "leaf_nodes": [
+        "finfish_white",
+        "finfish_oily",
+        "shellfish_crustacean",
+        "shellfish_mollusk",
+        "cephalopod",
+        "roe_caviar",
+        "freshwater_fish",
+        "dried_seafood"
+      ]
+    },
+    {
+      "id": "fats_and_oils",
+      "label": "Fats And Oils",
+      "leaf_nodes": [
+        "olive_oil",
+        "seed_oil",
+        "nut_oil",
+        "animal_fat",
+        "butter_ghee",
+        "coconut_fat",
+        "shortening_margarine"
+      ]
+    },
+    {
+      "id": "sweeteners",
+      "label": "Sweeteners",
+      "leaf_nodes": [
+        "cane_sugar",
+        "beet_sugar",
+        "honey",
+        "maple_syrup",
+        "molasses",
+        "agave_syrup",
+        "sugar_alcohol"
+      ]
+    },
+    {
+      "id": "spices_and_chiles",
+      "label": "Spices And Chiles",
+      "leaf_nodes": [
+        "chili_pepper",
+        "peppercorn",
+        "warm_spice",
+        "earthy_spice",
+        "seed_spice",
+        "bark_spice",
+        "smoked_spice",
+        "spice_blend"
+      ]
+    },
+    {
+      "id": "condiments_and_sauces",
+      "label": "Condiments And Sauces",
+      "leaf_nodes": [
+        "vinegar",
+        "soy_sauce_tamari",
+        "fish_sauce",
+        "fermented_paste",
+        "mustard",
+        "hot_sauce",
+        "ketchup_tomato_sauce",
+        "mayonnaise_emulsion"
+      ]
+    },
+    {
+      "id": "fungi",
+      "label": "Fungi",
+      "leaf_nodes": [
+        "culinary_mushroom",
+        "wild_mushroom",
+        "dried_mushroom",
+        "truffle",
+        "fungal_starter",
+        "mycoprotein"
+      ]
+    },
+    {
+      "id": "beverages_and_alcohol",
+      "label": "Beverages And Alcohol",
+      "leaf_nodes": [
+        "water",
+        "tea",
+        "coffee",
+        "juice",
+        "soda",
+        "beer_cider",
+        "wine_spirits"
+      ]
+    },
+    {
+      "id": "baking_and_leavening",
+      "label": "Baking And Leavening",
+      "leaf_nodes": [
+        "flour_refined",
+        "flour_wholegrain",
+        "starch",
+        "yeast",
+        "chemical_leavener",
+        "gelatin_setting_agent",
+        "cocoa_chocolate"
+      ]
+    },
+    {
+      "id": "prepared_and_processed",
+      "label": "Prepared And Processed",
+      "leaf_nodes": [
+        "stock_broth",
+        "canned_jarred",
+        "frozen_item",
+        "cured_smoked",
+        "pickled_fermented",
+        "plant_protein_processed",
+        "ready_sauce_base",
+        "snack_processed"
+      ]
+    }
+  ]
+}

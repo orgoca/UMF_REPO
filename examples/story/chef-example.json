@@ -77,5 +77,6 @@
         "notes": "Initial canonical chef example."
       }
     ]
-  }
+  },
+  "schema_version": "1.0"
 }

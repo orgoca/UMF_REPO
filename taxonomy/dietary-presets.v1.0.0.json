@@ -1,0 +1,58 @@
+{
+  "id": "umf-dietary-presets",
+  "title": "UMF Dietary Presets",
+  "taxonomy_version": "1.0.0",
+  "schema_version": "1.0",
+  "presets": [
+    {
+      "id": "vegan",
+      "displayName": "Vegan",
+      "description": "Excludes all animal-derived ingredients."
+    },
+    {
+      "id": "vegetarian",
+      "displayName": "Vegetarian",
+      "description": "Excludes meat, poultry, and seafood."
+    },
+    {
+      "id": "pescatarian",
+      "displayName": "Pescatarian",
+      "description": "Includes seafood; excludes meat and poultry."
+    },
+    {
+      "id": "gluten_free",
+      "displayName": "Gluten-Free",
+      "description": "Excludes gluten-containing grains and derivatives."
+    },
+    {
+      "id": "nut_free",
+      "displayName": "Nut-Free",
+      "description": "Excludes tree nuts and peanuts."
+    },
+    {
+      "id": "dairy_free",
+      "displayName": "Dairy-Free",
+      "description": "Excludes milk and dairy derivatives."
+    },
+    {
+      "id": "egg_free",
+      "displayName": "Egg-Free",
+      "description": "Excludes eggs and egg-derived ingredients."
+    },
+    {
+      "id": "soy_free",
+      "displayName": "Soy-Free",
+      "description": "Excludes soybeans and soy-derived ingredients."
+    },
+    {
+      "id": "sesame_free",
+      "displayName": "Sesame-Free",
+      "description": "Excludes sesame seeds and sesame derivatives."
+    },
+    {
+      "id": "alcohol_free",
+      "displayName": "Alcohol-Free",
+      "description": "Excludes alcohol-containing ingredients and beverages."
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 This document defines how the UMF specification evolves.
 
+Normative decisions are captured as ADRs in [docs/adr](./adr/README.md).
+
 ## Canonical Source
 
 The canonical source for UMF is this git repository.
@@ -21,6 +23,12 @@ Expected process:
 3. Compatibility review.
 4. Maintainer approval.
 5. Release tagging and publication.
+
+## Active ADRs
+
+- [ADR-001](./adr/ADR-001-canonical-lineage-promotion.md): canonical lineage promotion policy, including `isCanonical` and 14-day review window.
+- [ADR-002](./adr/ADR-002-schema-migration-and-compatibility.md): `schema_version` migration strategy with backward compatibility guarantees.
+- [ADR-003](./adr/ADR-003-taxonomy-versioning-and-vocabulary.md): taxonomy versioning and controlled vocabulary expansion policy.
 
 ## Compatibility Rules
 

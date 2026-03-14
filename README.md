@@ -102,6 +102,11 @@ flowchart LR
 
 See [examples/story/recipe-example.json](./examples/story/recipe-example.json) for a reference document.
 
+Taxonomy and dietary vocabularies:
+
+- [taxonomy/ingredient-taxonomy.v1.0.0.json](./taxonomy/ingredient-taxonomy.v1.0.0.json)
+- [taxonomy/dietary-presets.v1.0.0.json](./taxonomy/dietary-presets.v1.0.0.json)
+
 ## How To Adopt UMF
 
 1. Choose a release tag.
@@ -122,6 +127,15 @@ UMF uses semantic intent:
 - `schemas/`: JSON Schema artifacts.
 - `docs/`: specification and governance docs.
 - `examples/`: sample UMF documents.
+- `taxonomy/`: independently versioned controlled vocabularies.
+
+## Governance Decisions
+
+- ADR index: [docs/adr/README.md](./docs/adr/README.md)
+- Canonical lineage policy: [ADR-001](./docs/adr/ADR-001-canonical-lineage-promotion.md)
+- Schema migration policy: [ADR-002](./docs/adr/ADR-002-schema-migration-and-compatibility.md)
+- Taxonomy versioning policy: [ADR-003](./docs/adr/ADR-003-taxonomy-versioning-and-vocabulary.md)
+- Release history: [CHANGELOG.md](./CHANGELOG.md)
 
 ## Contributing
 

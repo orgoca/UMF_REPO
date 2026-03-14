@@ -16,6 +16,7 @@ The repository is canonical.
 - Explicit entity boundaries and relationships.
 - Schema-versioned interoperability.
 - Reviewable governance through pull requests and tags.
+- Deterministic taxonomy and dietary reasoning from controlled vocabularies.
 
 ## Current Entity Set
 
@@ -34,5 +35,8 @@ The repository is canonical.
 - Project home: https://umfspec.org/
 - Public docs site: https://umfspec.org/docs
 - Playground: https://umfspec.org/playground
+- ADR index: [adr/README.md](./adr/README.md)
 - Governance: [governance.md](./governance.md)
+- Taxonomy artifacts: [../taxonomy/README.md](../taxonomy/README.md)
+- Changelog: [../CHANGELOG.md](../CHANGELOG.md)
 - Contribution guide: [CONTRIBUTING.md](../CONTRIBUTING.md)

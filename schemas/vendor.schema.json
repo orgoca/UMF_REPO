@@ -5,8 +5,7 @@
   "type": "object",
   "required": [
     "id",
-    "name",
-    "formatVersion"
+    "name"
   ],
   "additionalProperties": false,
   "properties": {
@@ -17,7 +16,8 @@
       "type": "string"
     },
     "formatVersion": {
-      "type": "string"
+      "type": "string",
+      "description": "Legacy alias for schema_version. Maintained for backward compatibility."
     },
     "location": {
       "type": "string"
@@ -170,6 +170,22 @@
           "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
         }
       }
+    },
+    "schema_version": {
+      "type": "string",
+      "description": "Canonical schema version identifier. Prefer this field for new implementations."
     }
-  }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "schema_version"
+      ]
+    },
+    {
+      "required": [
+        "formatVersion"
+      ]
+    }
+  ]
 }

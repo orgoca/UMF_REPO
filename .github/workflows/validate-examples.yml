@@ -1,0 +1,68 @@
+name: Validate Examples
+
+on:
+  push:
+    paths:
+      - "schemas/**"
+      - "examples/story/**"
+      - ".github/workflows/validate-examples.yml"
+  pull_request:
+    paths:
+      - "schemas/**"
+      - "examples/story/**"
+      - ".github/workflows/validate-examples.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - schema: schemas/chef.schema.json
+            doc: examples/story/chef-example.json
+          - schema: schemas/ingredient.schema.json
+            doc: examples/story/ingredient-example.json
+          - schema: schemas/technique.schema.json
+            doc: examples/story/technique-example.json
+          - schema: schemas/recipe.schema.json
+            doc: examples/story/recipe-example.json
+          - schema: schemas/product.schema.json
+            doc: examples/story/product-example.json
+          - schema: schemas/vendor.schema.json
+            doc: examples/story/vendor-example.json
+          - schema: schemas/menu.schema.json
+            doc: examples/story/menu-example.json
+          - schema: schemas/collection.schema.json
+            doc: examples/story/collection-example.json
+          - schema: schemas/service.schema.json
+            doc: examples/story/service-example.json
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install validator
+        run: npm install -g ajv-cli ajv-formats
+
+      - name: Validate example
+        run: ajv validate --spec=draft2020 --strict=false -s "${{ matrix.schema }}" -d "${{ matrix.doc }}"
+
+  lineage-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Enforce lineage policy rules
+        run: node tools/validate_lineage_rules.js

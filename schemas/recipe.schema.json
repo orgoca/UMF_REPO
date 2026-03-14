@@ -15,8 +15,7 @@
       "type": "object",
       "required": [
         "title",
-        "version",
-        "formatVersion"
+        "version"
       ],
       "properties": {
         "title": {
@@ -33,7 +32,8 @@
           "type": "string"
         },
         "formatVersion": {
-          "type": "string"
+          "type": "string",
+          "description": "Legacy alias for schema_version. Maintained for backward compatibility."
         },
         "language": {
           "type": "string"
@@ -58,8 +58,28 @@
           "additionalProperties": {
             "type": "number"
           }
+        },
+        "schema_version": {
+          "type": "string",
+          "description": "Canonical schema version identifier. Prefer this field for new implementations."
+        },
+        "taxonomy_version_used": {
+          "type": "string",
+          "description": "Version identifier for ingredient taxonomy used to derive ingredient_categories and dietary presets."
         }
-      }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "schema_version"
+          ]
+        },
+        {
+          "required": [
+            "formatVersion"
+          ]
+        }
+      ]
     },
     "ingredients": {
       "type": "array",
@@ -329,10 +349,15 @@
           },
           "note": {
             "type": "string"
+          },
+          "isCanonical": {
+            "type": "boolean",
+            "description": "Canonical edge flag set by governance process. Do not infer canonical status from edge presence alone."
           }
         },
         "additionalProperties": false
-      }
+      },
+      "description": "Provenance edges between recipe variants. Co-occurrence rules: at most one relationship per (source,target) pair; if both translation_of and adaptation_of could apply to the same source, translation_of takes precedence. Canonical status is independent and carried by isCanonical."
     },
     "food_categories": {
       "type": "array",
@@ -344,9 +369,141 @@
     "ingredient_categories": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "enum": [
+          "allium",
+          "root_vegetable",
+          "leafy_green",
+          "cruciferous",
+          "nightshade",
+          "squash_gourd",
+          "stem_vegetable",
+          "sea_vegetable",
+          "citrus",
+          "berry",
+          "stone_fruit",
+          "pome_fruit",
+          "tropical_fruit",
+          "dried_fruit",
+          "melon",
+          "fresh_herb",
+          "dried_herb",
+          "aromatic_root",
+          "aromatic_stem",
+          "aromatic_leaf",
+          "aromatic_flower",
+          "aromatic_seed",
+          "wheat",
+          "rice",
+          "corn_maize",
+          "oats",
+          "barley",
+          "rye",
+          "ancient_grain",
+          "bean",
+          "lentil",
+          "chickpea",
+          "pea",
+          "broad_bean",
+          "soy_legume",
+          "lupin",
+          "tree_nut",
+          "peanut",
+          "sesame_seed",
+          "sunflower_seed",
+          "pumpkin_seed",
+          "chia_seed",
+          "flax_seed",
+          "milk",
+          "cultured_dairy",
+          "cheese_fresh",
+          "cheese_aged",
+          "cream_butter",
+          "yogurt_kefir",
+          "egg",
+          "beef",
+          "pork",
+          "lamb",
+          "goat",
+          "veal",
+          "game_meat",
+          "organ_meat",
+          "chicken",
+          "turkey",
+          "duck",
+          "goose",
+          "quail",
+          "game_bird",
+          "poultry_offal",
+          "finfish_white",
+          "finfish_oily",
+          "shellfish_crustacean",
+          "shellfish_mollusk",
+          "cephalopod",
+          "roe_caviar",
+          "freshwater_fish",
+          "dried_seafood",
+          "olive_oil",
+          "seed_oil",
+          "nut_oil",
+          "animal_fat",
+          "butter_ghee",
+          "coconut_fat",
+          "shortening_margarine",
+          "cane_sugar",
+          "beet_sugar",
+          "honey",
+          "maple_syrup",
+          "molasses",
+          "agave_syrup",
+          "sugar_alcohol",
+          "chili_pepper",
+          "peppercorn",
+          "warm_spice",
+          "earthy_spice",
+          "seed_spice",
+          "bark_spice",
+          "smoked_spice",
+          "spice_blend",
+          "vinegar",
+          "soy_sauce_tamari",
+          "fish_sauce",
+          "fermented_paste",
+          "mustard",
+          "hot_sauce",
+          "ketchup_tomato_sauce",
+          "mayonnaise_emulsion",
+          "culinary_mushroom",
+          "wild_mushroom",
+          "dried_mushroom",
+          "truffle",
+          "fungal_starter",
+          "mycoprotein",
+          "water",
+          "tea",
+          "coffee",
+          "juice",
+          "soda",
+          "beer_cider",
+          "wine_spirits",
+          "flour_refined",
+          "flour_wholegrain",
+          "starch",
+          "yeast",
+          "chemical_leavener",
+          "gelatin_setting_agent",
+          "cocoa_chocolate",
+          "stock_broth",
+          "canned_jarred",
+          "frozen_item",
+          "cured_smoked",
+          "pickled_fermented",
+          "plant_protein_processed",
+          "ready_sauce_base",
+          "snack_processed"
+        ]
       },
-      "description": "Flattened ingredient taxonomy categories present in this recipe (e.g., 'chili_pepper', 'root_vegetables', 'dried_herbs'). Enables pantry matching and dietary logic without resolving ingredientRef."
+      "description": "Controlled ingredient taxonomy leaf categories. Deterministic dietary logic depends on this constrained vocabulary."
     },
     "meal_position": {
       "type": "array",
@@ -399,6 +556,25 @@
           "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
         }
       }
+    },
+    "dietary_presets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "vegan",
+          "vegetarian",
+          "pescatarian",
+          "gluten_free",
+          "nut_free",
+          "dairy_free",
+          "egg_free",
+          "soy_free",
+          "sesame_free",
+          "alcohol_free"
+        ]
+      },
+      "description": "Named dietary presets computed deterministically from taxonomy and ingredient composition."
     }
   }
 }

@@ -7,6 +7,7 @@ This directory contains the canonical UMF JSON Schemas.
 - Files in this folder are authoritative for the corresponding UMF release.
 - Changes require pull request review.
 - Tags define immutable snapshots for downstream consumers.
+- `schema_version` is the canonical version field; `formatVersion` is a legacy compatibility alias.
 
 ## Current Schemas
 
@@ -33,3 +34,4 @@ When modifying a schema:
 1. Keep intent explicit in PR notes.
 2. Classify compatibility impact.
 3. Update examples and docs when semantics change.
+4. Keep taxonomy and dietary vocabularies aligned with [ADR-003](../docs/adr/ADR-003-taxonomy-versioning-and-vocabulary.md).

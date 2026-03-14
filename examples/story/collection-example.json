@@ -5,7 +5,8 @@
     "notes": [
       "Collection representing Chef Lucia's chile-focused cookbook body of work.",
       "Firelight Tomato Braise is one recipe within a much larger author collection."
-    ]
+    ],
+    "schema_version": "1.0"
   },
   "identity": {
     "title": "Lucia's Chile Book",

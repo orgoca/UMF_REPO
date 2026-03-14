@@ -17,7 +17,9 @@
     "baseRatio": {
       "tomato_to_fat": 8.0
     },
-    "externalId": "beef0004-0000-4000-8000-000000000004"
+    "externalId": "beef0004-0000-4000-8000-000000000004",
+    "schema_version": "1.0",
+    "taxonomy_version_used": "umf-ingredient-taxonomy/1.0.0"
   },
   "ingredients": [
     {
@@ -137,8 +139,8 @@
     "vegetable-forward"
   ],
   "ingredient_categories": [
-    "tomato",
-    "spice",
+    "nightshade",
+    "smoked_spice",
     "olive_oil"
   ],
   "meal_position": [
@@ -169,5 +171,16 @@
         "notes": "Initial canonical recipe example."
       }
     ]
-  }
+  },
+  "dietary_presets": [
+    "vegan",
+    "vegetarian",
+    "gluten_free",
+    "nut_free",
+    "dairy_free",
+    "egg_free",
+    "soy_free",
+    "sesame_free",
+    "alcohol_free"
+  ]
 }

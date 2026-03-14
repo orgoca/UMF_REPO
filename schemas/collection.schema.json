@@ -12,24 +12,40 @@
     "meta": {
       "type": "object",
       "required": [
-        "id",
-        "formatVersion"
+        "id"
       ],
       "properties": {
         "id": {
           "type": "string"
         },
         "formatVersion": {
-          "type": "string"
+          "type": "string",
+          "description": "Legacy alias for schema_version. Maintained for backward compatibility."
         },
         "notes": {
           "type": "array",
           "items": {
             "type": "string"
           }
+        },
+        "schema_version": {
+          "type": "string",
+          "description": "Canonical schema version identifier. Prefer this field for new implementations."
         }
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "schema_version"
+          ]
+        },
+        {
+          "required": [
+            "formatVersion"
+          ]
+        }
+      ]
     },
     "identity": {
       "type": "object",
@@ -178,10 +194,15 @@
           },
           "note": {
             "type": "string"
+          },
+          "isCanonical": {
+            "type": "boolean",
+            "description": "Canonical edge flag set by governance process. Do not infer canonical status from edge presence alone."
           }
         },
         "additionalProperties": false
-      }
+      },
+      "description": "Lineage edges with governance semantics."
     },
     "shared": {
       "type": "object",
