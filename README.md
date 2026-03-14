@@ -1,106 +1,108 @@
-# Ummi Markup Format (UMF) — Specification Repository
+# UMF Specification
 
-This repository captures the **Ummi Markup Format (UMF)** specification as a self-contained, professional-grade reference implementation.
+Canonical schemas and governance for the Ummi Markup Format (UMF).
 
-UMF is an **open, schema-versioned data standard** for representing culinary knowledge as a **typed knowledge graph**, not a document.
+UMF is an open, schema-versioned data standard for representing culinary knowledge as a typed knowledge graph.
 
-## 📌 What’s Included
+## Repository Contract
 
-- ✅ **JSON Schema artifacts** for UMF entity types (recipes, ingredients, techniques, etc.)
-- ✅ **Documentation** extracted from https://umfspec.org/
-- ✅ Scripts to **fetch / refresh** the schema artifacts directly from the live website
-- ✅ Standard open-source repository infrastructure (LICENSE, CONTRIBUTING, CI templates)
+This repository is the source of truth for UMF schemas and specification docs.
 
-## 🚀 Getting Started
+- `main` and tagged releases are canonical.
+- `umfspec.org` is a publication target built from this repository.
+- If the website and repository ever diverge, the repository wins.
 
-### 1) Install dependencies
+## What Is In This Repository
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
+- Canonical JSON Schema artifacts for all UMF entity types.
+- Human-readable specification docs and governance notes.
+- Example payloads for implementation guidance.
+- Open-source project infrastructure for contribution and review.
 
-### 2) Fetch the latest schemas from https://umfspec.org
+## What Is Not In This Repository
 
-```bash
-python scripts/fetch_schemas.py
-```
+- No schema scraping or sync scripts from the website.
+- No generated artifacts that cannot be traced to commits and releases.
+- No hidden canonical source outside git.
 
-This will populate `schemas/` with the canonical JSON Schema definitions.
+## Entity Coverage
 
-### 3) Validate example documents
+UMF currently defines nine first-class entity schemas:
 
-```bash
-python scripts/validate_recipe.py examples/recipe-example.json
-```
+- `recipe`
+- `ingredient`
+- `technique`
+- `chef`
+- `collection`
+- `menu`
+- `product`
+- `vendor`
+- `service`
 
-## 🗂 Project Layout
+## Repository Layout
 
-- `schemas/` — Canonical UMF JSON Schema files
-- `docs/` — Spec documentation extracted from umfspec.org
-- `scripts/` — Helpers & tooling (schema fetching, validation)
+- `schemas/`: Canonical JSON Schema files.
+- `docs/`: Specification and governance documentation.
+- `examples/`: Example UMF JSON documents.
 
-## � UMF Knowledge Graph (ERD)
+Important references:
 
-```mermaid
-flowchart TD
-    %% ── Controlled Vocabulary nodes ──
-    MT([meal_type])
-    CT([cuisine_type])
+- Schema guide: [schemas/README.md](./schemas/README.md)
+- Governance model: [docs/governance.md](./docs/governance.md)
 
-    %% ── Knowledge Layer ──
-    subgraph KNOWLEDGE["KNOWLEDGE LAYER"]
-        MT
-        CT
-        Chef
-        Recipe
-        Technique
-        Ingredient
-        Taxonomy
-    end
+## How To Use The Schemas
 
-    %% ── Curation Layer ──
-    subgraph CURATION["CURATION LAYER"]
-        Collection
-        Menu
-    end
+Use any JSON Schema Draft 2020-12 compatible validator in your runtime or CI pipeline.
 
-    %% ── Commercial Layer ──
-    subgraph COMMERCIAL["COMMERCIAL LAYER"]
-        Service
-        Product
-        Vendor
-    end
+Recommended consumption model:
 
-    %% ── Knowledge edges ──
-    MT -->|classifies| Recipe
-    CT -->|classifies| Recipe
-    Chef -->|creates| Recipe
-    Recipe -->|uses| Technique
-    Recipe -->|uses| Ingredient
-    Ingredient -->|classified by| Taxonomy
+1. Pin to a release tag.
+2. Vendor or reference the schema files from that tag.
+3. Validate producer and consumer payloads in CI.
+4. Upgrade intentionally between schema versions.
 
-    %% ── Knowledge → Curation ──
-    Recipe -->|grouped into| Collection
-    Recipe -->|composed into| Menu
+## Change Model
 
-    %% ── Curation → Commercial ──
-    Menu -->|executed by| Service
+All schema changes must flow through pull requests.
 
-    %% ── Knowledge → Commercial ──
-    Ingredient -->|instantiated as| Product
+Required for schema PRs:
 
-    %% ── Commercial edges ──
-    Product -->|sold by| Vendor
-    Vendor -->|sources from| Service
-```
+1. Clear rationale in the PR description.
+2. Compatibility impact statement.
+3. Example payload changes when behavior changes.
+4. Documentation updates in `docs/` when semantics change.
 
-## �🔖 License
+## Versioning And Releases
 
-This repo is released under **CC BY 4.0** (same as the original UMF spec).
+UMF follows explicit schema versioning.
 
----
+- Patch: editorial fixes or non-breaking clarifications.
+- Minor: backwards-compatible additive schema changes.
+- Major: breaking changes requiring migration.
 
-📌 This repository is intended as a canonical, community-friendly home for the UMF standard.
-If you want to propose changes, please open an issue or a pull request.
+Every released version should map to:
+
+- A git tag.
+- A stable schema set in `schemas/`.
+- A matching website publication.
+
+## Publication Policy
+
+`umfspec.org` should publish from tagged releases of this repository.
+
+Suggested publication pattern:
+
+1. Merge approved PR into `main`.
+2. Create release tag.
+3. Publish site artifacts from that exact tag.
+4. Keep versioned schema URLs immutable.
+
+## Contributing
+
+Contribution guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+Code of conduct: [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+
+## License
+
+Released under [CC BY 4.0](./LICENSE).

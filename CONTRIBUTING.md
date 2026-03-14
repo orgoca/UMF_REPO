@@ -1,31 +1,70 @@
-# Contributing to UMF
+# Contributing To UMF
 
-Thanks for your interest in contributing! This project aims to be a community-maintained reference implementation of the Ummi Markup Format (UMF) standard.
+Thanks for contributing to the Ummi Markup Format (UMF).
 
-## ✅ How to contribute
+This project treats the repository as canonical for schemas and specification docs.
 
-1. **Fork the repository** and create a branch for your change.
-2. **Run tests and validation** before submitting a PR.
-3. **Open a Pull Request**, explaining your changes and why they are needed.
+## Ground Rules
 
-## 🧰 Development workflow
+- Schema and documentation changes happen by pull request only.
+- Direct pushes to protected branches should be disabled.
+- Every material change should be reviewable from git history alone.
 
-- Use `python -m venv .venv` and `pip install -r requirements.txt`.
-- Run `python scripts/fetch_schemas.py` to sync the latest official schemas.
-- Validate a sample document using the scripts in `scripts/`.
+## Contribution Flow
 
-## 🧩 Schema changes
+1. Fork the repository.
+2. Create a feature branch.
+3. Make focused changes.
+4. Open a pull request with rationale and impact.
 
-UMF is a schema-versioned standard. If you want to propose schema changes, update the JSON Schema artifacts in `schemas/` and document the reason in a pull request.
+## Pull Request Expectations
 
-If your changes affect interoperability or require a new schema version, open an issue first to discuss the proposal.
+Every PR should include:
 
-## 📬 Reporting issues
+1. Problem statement.
+2. Proposed change.
+3. Compatibility assessment.
+4. Migration notes when applicable.
+5. Documentation updates when semantics changed.
 
-Please open an issue if you:
+## Schema Change Checklist
 
-- Find a discrepancy between the schema files and the official site
-- Discover a bug in the validation scripts
-- Have a suggestion for improving documentation or tooling
+For any file in `schemas/`:
 
-Thanks for helping make UMF better! 🙌
+1. Explain whether change is breaking, additive, or editorial.
+2. Update examples if payload behavior changed.
+3. Keep `$id` and versioning semantics coherent.
+4. Confirm JSON remains valid and machine-readable.
+
+## Versioning Guidance
+
+Use semantic intent:
+
+- Patch for non-breaking fixes and clarifications.
+- Minor for additive, backwards-compatible changes.
+- Major for breaking changes.
+
+If uncertain, open an issue before implementing the change.
+
+## Publication Alignment
+
+The website should publish from repository tags.
+
+If a discrepancy appears between `umfspec.org` and this repository:
+
+1. Open an issue describing the mismatch.
+2. Include the exact URLs, commit/tag, and observed behavior.
+3. Propose whether to fix repo, site pipeline, or both.
+
+## Reporting Issues
+
+Open an issue for:
+
+- Schema bugs.
+- Ambiguous semantics.
+- Documentation gaps.
+- Release/versioning inconsistencies.
+
+## Community Standards
+
+By participating, you agree to the [Code of Conduct](./CODE_OF_CONDUCT.md).

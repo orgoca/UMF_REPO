@@ -1,27 +1,38 @@
-# UMF Specification (Docs)
+# UMF Docs Index
 
-This folder contains extracted documentation for the **Ummi Markup Format (UMF)**.
+This folder contains repository-native specification and governance docs for UMF.
 
-## Overview
+## Canonical Policy
 
-UMF is an open, schema-versioned data standard that represents culinary knowledge as a **typed knowledge graph** rather than a flat document.
+The repository is canonical.
 
-Key concepts include:
+- Schemas in `schemas/` are the ground truth.
+- Docs in `docs/` define behavior and governance.
+- Website content should be derived from repository releases.
 
-- **Nine entity types**: Recipe, Ingredient, Technique, Chef, Collection, Menu, Product, Vendor, Service
-- **Provenance & Lineage**: Recipes and other entities form directed acyclic graphs capturing adaptation, variation, and translation relationships
-- **Deterministic Dietary Logic**: Dietary filters are computed against a controlled ingredient taxonomy (not keyword heuristics)
-- **Schema Governance**: Versioned schema artifacts and Architecture Decision Records (ADRs)
+## Core Concepts
 
-## How to Use
+- Typed culinary knowledge graph.
+- Explicit entity boundaries and relationships.
+- Schema-versioned interoperability.
+- Reviewable governance through pull requests and tags.
 
-1. Fetch the latest schemas: `python scripts/fetch_schemas.py`
-2. Validate documents against the schemas (see `scripts/validate_recipe.py`)
-3. Read the full spec at https://umfspec.org/docs
+## Current Entity Set
 
-## Additional Resources
+- Recipe
+- Ingredient
+- Technique
+- Chef
+- Collection
+- Menu
+- Product
+- Vendor
+- Service
 
-- Website: https://umfspec.org/
-- Schemas: https://umfspec.org/schemas
+## Reference Links
+
+- Project home: https://umfspec.org/
+- Public docs site: https://umfspec.org/docs
 - Playground: https://umfspec.org/playground
-- Contribution guidelines: [CONTRIBUTING.md](../CONTRIBUTING.md)
+- Governance: [governance.md](./governance.md)
+- Contribution guide: [CONTRIBUTING.md](../CONTRIBUTING.md)
