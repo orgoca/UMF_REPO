@@ -39,6 +39,61 @@ UMF currently defines nine first-class entity schemas:
 - `vendor`
 - `service`
 
+## UMF Knowledge Graph
+
+```mermaid
+flowchart TD
+    %% -- Controlled Vocabulary nodes --
+    MT([meal_type])
+    CT([cuisine_type])
+
+    %% -- Knowledge Layer --
+    subgraph KNOWLEDGE["KNOWLEDGE LAYER"]
+        MT
+        CT
+        Chef
+        Recipe
+        Technique
+        Ingredient
+        Taxonomy
+    end
+
+    %% -- Curation Layer --
+    subgraph CURATION["CURATION LAYER"]
+        Collection
+        Menu
+    end
+
+    %% -- Commercial Layer --
+    subgraph COMMERCIAL["COMMERCIAL LAYER"]
+        Service
+        Product
+        Vendor
+    end
+
+    %% -- Knowledge edges --
+    MT -->|classifies| Recipe
+    CT -->|classifies| Recipe
+    Chef -->|creates| Recipe
+    Recipe -->|uses| Technique
+    Recipe -->|uses| Ingredient
+    Ingredient -->|classified by| Taxonomy
+
+    %% -- Knowledge -> Curation --
+    Recipe -->|grouped into| Collection
+    Recipe -->|composed into| Menu
+
+    %% -- Curation -> Commercial --
+    Menu -->|executed by| Service
+
+    %% -- Knowledge -> Commercial --
+    Ingredient -->|instantiated as| Product
+
+    %% -- Commercial edges --
+    Product -->|sold by| Vendor
+    Vendor -->|sources from| Service
+```
+
 ## Repository Layout
 
 - `schemas/`: Canonical JSON Schema files.
