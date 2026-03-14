@@ -1,0 +1,81 @@
+{
+  "id": "11111111-1111-4111-8111-111111111111",
+  "displayName": "Chef Lucia Alvarez",
+  "formatVersion": "1.0",
+  "contributorType": "professional",
+  "biography": {
+    "shortBio": "Chef Lucia Alvarez develops modern hearth-driven Latin recipes.",
+    "longBio": "Lucia founded a catering studio focused on open-fire flavors and reproducible kitchen standards.",
+    "era": "Contemporary",
+    "birthDate": "1988-04-21"
+  },
+  "geography": {
+    "placeOfOrigin": "Monterrey, Mexico",
+    "primaryLocation": "Austin, Texas, USA",
+    "regions": [
+      "Northeastern Mexico",
+      "Central Texas"
+    ],
+    "diasporaContext": "Mexican culinary tradition adapted for Texas farm-to-table catering."
+  },
+  "culinaryProfile": {
+    "cuisineAssociations": [
+      "Mexican",
+      "Tex-Mex",
+      "Contemporary Latin"
+    ],
+    "specialties": [
+      "Open-fire braises",
+      "Catering menus",
+      "Sauce layering"
+    ],
+    "styleNotes": [
+      "Ingredient-first",
+      "Layered heat",
+      "Balanced acidity"
+    ]
+  },
+  "lineage": {
+    "mentors": [
+      "Chef Ana Robles"
+    ],
+    "students": [
+      "Ember Table apprentices"
+    ],
+    "influences": [
+      "Northern Mexican home cooking",
+      "Wood-fire grilling"
+    ],
+    "lineageNotes": [
+      "Known for codifying family techniques into service-ready recipes."
+    ]
+  },
+  "authorship": {
+    "knownFor": [
+      "Firelight Tomato Braise"
+    ],
+    "attributionConfidence": "certain",
+    "attributionNotes": [
+      "Invented during Ember Table Catering R&D in 2025."
+    ]
+  },
+  "media": {
+    "portrait": "https://umfspec.org/media/chef-lucia-alvarez.jpg",
+    "externalLinks": [
+      {
+        "label": "Chef profile",
+        "url": "https://umfspec.org/contributors/lucia-alvarez"
+      }
+    ]
+  },
+  "extensions": {
+    "history": [
+      {
+        "version": "1.0",
+        "author": "UMF editorial",
+        "timestamp": "2026-03-14T10:00:00Z",
+        "notes": "Initial canonical chef example."
+      }
+    ]
+  }
+}

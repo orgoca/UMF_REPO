@@ -1,0 +1,44 @@
+{
+  "id": "22222222-2222-4222-8222-222222222222",
+  "canonicalName": "Smoked Paprika",
+  "formatVersion": "1.0",
+  "classification": {
+    "taxonomyRefs": [
+      "spice",
+      "pepper-derived",
+      "smoked-seasoning"
+    ],
+    "ingredientType": "seasoning"
+  },
+  "allergens": [],
+  "dietaryFlags": [
+    "vegan",
+    "vegetarian",
+    "gluten_free"
+  ],
+  "variations": [
+    {
+      "name": "Hot Smoked Paprika",
+      "notes": "Higher capsaicin profile suitable for spicier menus."
+    }
+  ],
+  "substitutions": [
+    {
+      "substitute": "Sweet paprika + chipotle powder blend",
+      "context": "When smoked paprika inventory is unavailable.",
+      "approximateRatio": "1:1",
+      "reason": "availability",
+      "notes": "Adjust for heat to maintain balance."
+    }
+  ],
+  "extensions": {
+    "history": [
+      {
+        "version": "1.0",
+        "author": "UMF editorial",
+        "timestamp": "2026-03-14T10:01:00Z",
+        "notes": "Initial canonical ingredient example."
+      }
+    ]
+  }
+}

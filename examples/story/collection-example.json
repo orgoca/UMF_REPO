@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "id": "66666666-6666-4666-8666-666666666666",
+    "formatVersion": "1.0",
+    "notes": [
+      "Collection documenting the creation and service lifecycle of Firelight Tomato Braise."
+    ]
+  },
+  "identity": {
+    "title": "Chef Lucia Firelight Archive",
+    "subtitle": "Invent, standardize, and serve pipeline",
+    "description": "Curated collection linking inventor, recipe, menu deployment, and service context.",
+    "tags": [
+      "chef-authored",
+      "catering",
+      "knowledge-graph"
+    ]
+  },
+  "curation": {
+    "collectionType": "author_body_of_work",
+    "curatorRefs": [
+      "UMF Editorial Team"
+    ],
+    "attributedChefRefs": [
+      "11111111-1111-4111-8111-111111111111"
+    ],
+    "orderingPrinciple": "manual",
+    "attributionConfidence": "certain",
+    "attributionNotes": [
+      "Primary recipe authored by Chef Lucia Alvarez."
+    ]
+  },
+  "contents": {
+    "recipeRefs": [
+      {
+        "recipeRef": "44444444-4444-4444-8444-444444444444",
+        "sortOrder": 1,
+        "section": "Core Recipes",
+        "note": "Anchor recipe for this story."
+      }
+    ],
+    "featuredRecipeRefs": [
+      "44444444-4444-4444-8444-444444444444"
+    ]
+  },
+  "lineage": [
+    {
+      "relationship": "continuation_of",
+      "collectionRef": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+      "note": "Extends prior regional archive with catering deployment context."
+    }
+  ],
+  "shared": {
+    "visibility": "public",
+    "allow_forks": true,
+    "allow_comments": true
+  },
+  "extensions": {
+    "history": [
+      {
+        "version": "1.0",
+        "author": "UMF editorial",
+        "timestamp": "2026-03-14T10:07:00Z",
+        "notes": "Initial canonical collection example."
+      }
+    ]
+  }
+}

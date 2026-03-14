@@ -1,0 +1,99 @@
+{
+  "id": "99999999-9999-4999-8999-999999999999",
+  "name": "Ember Table Catering",
+  "formatVersion": "1.0",
+  "serviceType": "caterer",
+  "location": "Austin, Texas, USA",
+  "website": "https://umfspec.org/services/ember-table-catering",
+  "description": "Catering service that features Firelight Tomato Braise in private and corporate event menus.",
+  "chefRefs": [
+    "11111111-1111-4111-8111-111111111111"
+  ],
+  "menuRefs": [
+    "55555555-5555-4555-8555-555555555555"
+  ],
+  "capacity": {
+    "dailyCovers": 280,
+    "kitchenSize": "commercial",
+    "maxEvents": 3
+  },
+  "operatingHours": [
+    {
+      "day": "monday",
+      "open": "08:00",
+      "close": "18:00"
+    },
+    {
+      "day": "tuesday",
+      "open": "08:00",
+      "close": "18:00"
+    },
+    {
+      "day": "wednesday",
+      "open": "08:00",
+      "close": "18:00"
+    },
+    {
+      "day": "thursday",
+      "open": "08:00",
+      "close": "18:00"
+    },
+    {
+      "day": "friday",
+      "open": "08:00",
+      "close": "20:00"
+    },
+    {
+      "day": "saturday",
+      "open": "10:00",
+      "close": "22:00"
+    },
+    {
+      "day": "sunday",
+      "closed": true
+    }
+  ],
+  "serviceAreas": [
+    "Austin Metro",
+    "San Antonio Metro"
+  ],
+  "pricingModel": {
+    "averageCheck": {
+      "amount": 38,
+      "currency": "USD"
+    },
+    "perHeadRange": {
+      "min": 28,
+      "max": 65,
+      "currency": "USD"
+    },
+    "menuPricingRefs": [
+      "55555555-5555-4555-8555-555555555555"
+    ]
+  },
+  "specializations": [
+    "Open-fire menus",
+    "Corporate catering",
+    "Seasonal Latin cuisine"
+  ],
+  "preferredVendorRefs": [
+    "88888888-8888-4888-8888-888888888888"
+  ],
+  "lastUpdated": "2026-03-14T09:50:00Z",
+  "extensions": {
+    "reviews_summary": {
+      "averageRating": 4.8,
+      "reviewCount": 126,
+      "source": "internal_aggregator",
+      "lastUpdated": "2026-03-01"
+    },
+    "history": [
+      {
+        "version": "1.0",
+        "author": "UMF editorial",
+        "timestamp": "2026-03-14T10:08:00Z",
+        "notes": "Initial canonical service example."
+      }
+    ]
+  }
+}

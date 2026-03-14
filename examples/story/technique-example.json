@@ -1,0 +1,125 @@
+{
+  "id": "33333333-3333-4333-8333-333333333333",
+  "name": "Chile Bloom and Slow Simmer",
+  "formatVersion": "1.0",
+  "description": "Bloom spices in warm fat, then slowly simmer tomato base until glossy and concentrated.",
+  "ingredients": [
+    {
+      "name": "Smoked Paprika",
+      "amount": 4,
+      "unit": "g",
+      "role": "aromatic base",
+      "ingredientRef": "22222222-2222-4222-8222-222222222222"
+    }
+  ],
+  "miseEnPlace": [
+    {
+      "item": "Tomatoes",
+      "amount": 800,
+      "unit": "g",
+      "state": "crushed",
+      "notes": "Prefer ripe canned whole peeled tomatoes."
+    },
+    "Warm olive oil in saucepan before blooming spices."
+  ],
+  "process": [
+    {
+      "step": 1,
+      "instruction": "Warm olive oil over medium-low heat."
+    },
+    {
+      "step": 2,
+      "instruction": "Add smoked paprika and stir for 20 to 30 seconds."
+    },
+    {
+      "step": 3,
+      "instruction": "Add tomatoes and simmer 20 minutes, stirring occasionally."
+    }
+  ],
+  "plating": [
+    "Spoon over grilled bread or braised proteins."
+  ],
+  "sensory_check": [
+    "Aroma shifts from raw spice to sweet-smoky.",
+    "Sauce coats the back of a spoon."
+  ],
+  "common_errors": [
+    "Overheating paprika causes bitterness."
+  ],
+  "nutrition": {
+    "serving_size": "120 g sauce",
+    "total_yield": 6,
+    "source": "Internal kitchen estimate",
+    "per_serving": {
+      "calories": 78,
+      "protein_g": 1.4,
+      "fat_g": 4.9,
+      "saturated_fat_g": 0.7,
+      "carbohydrates_g": 7.1,
+      "fiber_g": 1.8,
+      "sugar_g": 4.2,
+      "sodium_mg": 210,
+      "cholesterol_mg": 0
+    }
+  },
+  "media": [
+    {
+      "type": "image",
+      "url": "https://umfspec.org/media/technique-bloom.jpg",
+      "role": "hero",
+      "label": "Paprika bloom stage"
+    }
+  ],
+  "lineage": [
+    {
+      "relationship": "inspired_by",
+      "techniqueRef": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      "note": "Inspired by traditional sofrito blooming methods."
+    }
+  ],
+  "mastery": {
+    "masteryLevel": "intermediate",
+    "prerequisites": [
+      "Heat management basics"
+    ],
+    "learningGoals": [
+      "Extract spice aroma without scorching",
+      "Control reduction and texture"
+    ]
+  },
+  "relationships": {
+    "relatedTechniques": [
+      "Soffritto base"
+    ],
+    "broaderTechnique": "Sauce building",
+    "narrowerTechniques": [
+      "Spice blooming"
+    ]
+  },
+  "applications": {
+    "typicalUses": [
+      "Tomato braises",
+      "Bean stews",
+      "Egg dishes"
+    ],
+    "ingredientContexts": [
+      "Tomato",
+      "Pepper",
+      "Onion"
+    ],
+    "cuisineAssociations": [
+      "Mexican",
+      "Spanish-influenced"
+    ]
+  },
+  "extensions": {
+    "history": [
+      {
+        "version": "1.0",
+        "author": "UMF editorial",
+        "timestamp": "2026-03-14T10:02:00Z",
+        "notes": "Initial canonical technique example."
+      }
+    ]
+  }
+}

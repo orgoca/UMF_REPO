@@ -1,0 +1,56 @@
+{
+  "id": "55555555-5555-4555-8555-555555555555",
+  "title": "Saturday Firelight Supper",
+  "formatVersion": "1.0",
+  "description": "Catering menu featuring Chef Lucia's Firelight Tomato Braise as the anchor dish.",
+  "entries": [
+    {
+      "recipeRef": "44444444-4444-4444-8444-444444444444",
+      "course_type": "main",
+      "section": "Signature Dishes",
+      "note": "Serve with grilled sourdough and charred seasonal vegetables."
+    }
+  ],
+  "composition": {
+    "sequencingNotes": "Begin with lighter starters, then present braise as centerpiece.",
+    "balanceNotes": {
+      "flavor": "Smoky and bright with mild heat.",
+      "texture": "Silky sauce over crisp grilled bread.",
+      "pacing": "Best served in second course window."
+    }
+  },
+  "schedule": {
+    "startDate": "2026-04-01",
+    "endDate": "2026-06-30",
+    "assignments": [
+      {
+        "date": "2026-04-12",
+        "mealSlot": "dinner",
+        "recipeRef": "44444444-4444-4444-8444-444444444444",
+        "note": "Private event menu rotation."
+      }
+    ]
+  },
+  "lineage": [
+    {
+      "relationship": "inspired_by",
+      "menuRef": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+      "note": "Built from prior seasonal tasting framework."
+    }
+  ],
+  "shared": {
+    "visibility": "shared",
+    "allow_forks": true,
+    "allow_comments": true
+  },
+  "extensions": {
+    "history": [
+      {
+        "version": "1.0",
+        "author": "UMF editorial",
+        "timestamp": "2026-03-14T10:06:00Z",
+        "notes": "Initial canonical menu example."
+      }
+    ]
+  }
+}

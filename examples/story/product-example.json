@@ -1,0 +1,86 @@
+{
+  "id": "77777777-7777-4777-8777-777777777777",
+  "name": "Sierra Smoked Paprika 80g",
+  "formatVersion": "1.0",
+  "ingredientRef": "22222222-2222-4222-8222-222222222222",
+  "brand": "Sierra Pantry",
+  "vendorRefs": [
+    "88888888-8888-4888-8888-888888888888"
+  ],
+  "packaging": "80g tin",
+  "description": "Oak-smoked paprika with balanced heat and sweet finish.",
+  "barcode": "7501234567890",
+  "origin": "Mexico",
+  "gtin": "07501234567890",
+  "pricing": [
+    {
+      "amount": 6.49,
+      "currency": "USD",
+      "packSize": "80g",
+      "unitOfMeasure": "per_item",
+      "effectiveDate": "2026-03-01",
+      "sourceSystem": "vendor_catalog"
+    }
+  ],
+  "availability": {
+    "inStock": true,
+    "stockQuantity": 420,
+    "leadTimeDays": 2,
+    "lastUpdated": "2026-03-14T09:30:00Z"
+  },
+  "certifications": [
+    {
+      "type": "non_gmo",
+      "issuer": "Ingredient Standards Board",
+      "expiryDate": "2027-12-31",
+      "verifiedUrl": "https://umfspec.org/certs/non-gmo-sierra-paprika"
+    }
+  ],
+  "lotBatchInfo": [
+    {
+      "batchId": "SP-2026-03-A",
+      "expiryDate": "2027-03-01",
+      "harvestDate": "2025-10-10",
+      "countryOfOrigin": "MX",
+      "carbonFootprintPerKg": 2.3
+    }
+  ],
+  "nutritionPerServing": {
+    "serving_size": "2 g",
+    "calories": 6,
+    "protein_g": 0.3,
+    "fat_g": 0.3,
+    "saturated_fat_g": 0.0,
+    "carbohydrates_g": 1.1,
+    "fiber_g": 0.7,
+    "sugar_g": 0.2,
+    "sodium_mg": 2,
+    "cholesterol_mg": 0
+  },
+  "media": [
+    {
+      "type": "image",
+      "url": "https://umfspec.org/media/sierra-paprika-80g.jpg",
+      "role": "hero",
+      "label": "Product front label"
+    }
+  ],
+  "unitConversions": [
+    {
+      "fromUnit": "tbsp",
+      "toUnit": "g",
+      "factor": 6.8
+    }
+  ],
+  "lastUpdated": "2026-03-14T09:35:00Z",
+  "extensions": {
+    "history": [
+      {
+        "version": "1.0",
+        "author": "UMF editorial",
+        "timestamp": "2026-03-14T10:04:00Z",
+        "notes": "Initial canonical product example."
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "88888888-8888-4888-8888-888888888888",
+  "name": "Mercado Norte Ingredients",
+  "formatVersion": "1.0",
+  "location": "Austin, Texas, USA",
+  "website": "https://umfspec.org/vendors/mercado-norte",
+  "description": "Specialty ingredient vendor focused on Latin pantry products for foodservice teams.",
+  "productRefs": [
+    "77777777-7777-4777-8777-777777777777"
+  ],
+  "regions": [
+    "US-TX",
+    "US-NM"
+  ],
+  "gln": "9501101530003",
+  "certifications": [
+    {
+      "type": "fairtrade",
+      "issuer": "Fair Trade Alliance",
+      "expiryDate": "2028-01-31",
+      "verifiedUrl": "https://umfspec.org/certs/mercado-fairtrade"
+    }
+  ],
+  "deliveryOptions": [
+    {
+      "method": "standard_shipping",
+      "supportedRegions": [
+        "US-TX",
+        "US-NM"
+      ],
+      "cost": {
+        "amount": 12.0,
+        "currency": "USD"
+      },
+      "minOrderValue": {
+        "amount": 75.0,
+        "currency": "USD"
+      },
+      "leadTimeDays": 2
+    },
+    {
+      "method": "local_pickup",
+      "supportedRegions": [
+        "Austin Metro"
+      ],
+      "cost": {
+        "amount": 0.0,
+        "currency": "USD"
+      },
+      "minOrderValue": {
+        "amount": 0.0,
+        "currency": "USD"
+      },
+      "leadTimeDays": 0
+    }
+  ],
+  "apiEndpoint": "https://umfspec.org/api/vendors/mercado-norte",
+  "lastUpdated": "2026-03-14T09:40:00Z",
+  "extensions": {
+    "reliability_metrics": {
+      "fulfillmentRate": 0.98,
+      "averageResponseHours": 4,
+      "yearsInBusiness": 12
+    },
+    "history": [
+      {
+        "version": "1.0",
+        "author": "UMF editorial",
+        "timestamp": "2026-03-14T10:05:00Z",
+        "notes": "Initial canonical vendor example."
+      }
+    ]
+  }
+}
