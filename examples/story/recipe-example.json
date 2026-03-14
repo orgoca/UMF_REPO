@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Firelight Tomato Braise",
-    "authorRef": "11111111-1111-4111-8111-111111111111",
+    "authorRef": "cafe0001-0000-4000-8000-000000000001",
     "authorDisplay": "Chef Lucia Alvarez",
     "version": "1.0.0",
     "formatVersion": "1.0",
@@ -17,7 +17,7 @@
     "baseRatio": {
       "tomato_to_fat": 8.0
     },
-    "externalId": "44444444-4444-4444-8444-444444444444"
+    "externalId": "beef0004-0000-4000-8000-000000000004"
   },
   "ingredients": [
     {
@@ -26,7 +26,7 @@
       "unit": "g",
       "prep": "measured",
       "role": "aromatic",
-      "ingredientRef": "22222222-2222-4222-8222-222222222222",
+      "ingredientRef": "feed0002-0000-4000-8000-000000000002",
       "grocerySection": "Spices & Seasonings"
     },
     {
@@ -49,7 +49,7 @@
     {
       "ref": "t1",
       "name": "Chile Bloom and Slow Simmer",
-      "techniqueRef": "33333333-3333-4333-8333-333333333333",
+      "techniqueRef": "fade0003-0000-4000-8000-000000000003",
       "steps": [
         "Warm oil",
         "Bloom paprika",

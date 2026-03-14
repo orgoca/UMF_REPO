@@ -1,5 +1,5 @@
 {
-  "id": "99999999-9999-4999-8999-999999999999",
+  "id": "face0009-0000-4000-8000-000000000009",
   "name": "Ember Table Catering",
   "formatVersion": "1.0",
   "serviceType": "caterer",
@@ -7,10 +7,10 @@
   "website": "https://umfspec.org/services/ember-table-catering",
   "description": "Catering service that features Firelight Tomato Braise in private and corporate event menus.",
   "chefRefs": [
-    "11111111-1111-4111-8111-111111111111"
+    "cafe0001-0000-4000-8000-000000000001"
   ],
   "menuRefs": [
-    "55555555-5555-4555-8555-555555555555"
+    "babe0005-0000-4000-8000-000000000005"
   ],
   "capacity": {
     "dailyCovers": 280,
@@ -68,7 +68,7 @@
       "currency": "USD"
     },
     "menuPricingRefs": [
-      "55555555-5555-4555-8555-555555555555"
+      "babe0005-0000-4000-8000-000000000005"
     ]
   },
   "specializations": [
@@ -77,7 +77,7 @@
     "Seasonal Latin cuisine"
   ],
   "preferredVendorRefs": [
-    "88888888-8888-4888-8888-888888888888"
+    "deed0008-0000-4000-8000-000000000008"
   ],
   "lastUpdated": "2026-03-14T09:50:00Z",
   "extensions": {

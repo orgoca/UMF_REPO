@@ -2,12 +2,12 @@
 
 This folder provides nine linked UMF examples that describe one consistent story:
 
-1. Chef `11111111-1111-4111-8111-111111111111` invents recipe `44444444-4444-4444-8444-444444444444`.
-2. Recipe uses technique `33333333-3333-4333-8333-333333333333`.
-3. Recipe uses ingredient `22222222-2222-4222-8222-222222222222`.
-4. Ingredient is instantiated as product `77777777-7777-4777-8777-777777777777` sold by vendor `88888888-8888-4888-8888-888888888888`.
-5. Recipe appears in menu `55555555-5555-4555-8555-555555555555` and in a cookbook-style collection `66666666-6666-4666-8666-666666666666` that contains many chile recipes.
-6. Service `99999999-9999-4999-8999-999999999999` caters using menu `55555555-5555-4555-8555-555555555555`.
+1. Chef `cafe0001-0000-4000-8000-000000000001` invents recipe `beef0004-0000-4000-8000-000000000004`.
+2. Recipe uses technique `fade0003-0000-4000-8000-000000000003`.
+3. Recipe uses ingredient `feed0002-0000-4000-8000-000000000002`.
+4. Ingredient is instantiated as product `f00d0007-0000-4000-8000-000000000007` sold by vendor `deed0008-0000-4000-8000-000000000008`.
+5. Recipe appears in menu `babe0005-0000-4000-8000-000000000005` and in a cookbook-style collection `c0de0006-0000-4000-8000-000000000006` that contains many chile recipes.
+6. Service `face0009-0000-4000-8000-000000000009` caters using menu `babe0005-0000-4000-8000-000000000005`.
 
 Files:
 - chef-example.json

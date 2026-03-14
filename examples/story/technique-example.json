@@ -1,5 +1,5 @@
 {
-  "id": "33333333-3333-4333-8333-333333333333",
+  "id": "fade0003-0000-4000-8000-000000000003",
   "name": "Chile Bloom and Slow Simmer",
   "formatVersion": "1.0",
   "description": "Bloom spices in warm fat, then slowly simmer tomato base until glossy and concentrated.",
@@ -9,7 +9,7 @@
       "amount": 4,
       "unit": "g",
       "role": "aromatic base",
-      "ingredientRef": "22222222-2222-4222-8222-222222222222"
+      "ingredientRef": "feed0002-0000-4000-8000-000000000002"
     }
   ],
   "miseEnPlace": [

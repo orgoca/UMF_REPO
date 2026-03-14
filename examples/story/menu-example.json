@@ -1,11 +1,11 @@
 {
-  "id": "55555555-5555-4555-8555-555555555555",
+  "id": "babe0005-0000-4000-8000-000000000005",
   "title": "Saturday Firelight Supper",
   "formatVersion": "1.0",
   "description": "Catering menu featuring Chef Lucia's Firelight Tomato Braise as the anchor dish.",
   "entries": [
     {
-      "recipeRef": "44444444-4444-4444-8444-444444444444",
+      "recipeRef": "beef0004-0000-4000-8000-000000000004",
       "course_type": "main",
       "section": "Signature Dishes",
       "note": "Serve with grilled sourdough and charred seasonal vegetables."
@@ -26,7 +26,7 @@
       {
         "date": "2026-04-12",
         "mealSlot": "dinner",
-        "recipeRef": "44444444-4444-4444-8444-444444444444",
+        "recipeRef": "beef0004-0000-4000-8000-000000000004",
         "note": "Private event menu rotation."
       }
     ]

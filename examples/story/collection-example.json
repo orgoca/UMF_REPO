@@ -1,6 +1,6 @@
 {
   "meta": {
-    "id": "66666666-6666-4666-8666-666666666666",
+    "id": "c0de0006-0000-4000-8000-000000000006",
     "formatVersion": "1.0",
     "notes": [
       "Collection representing Chef Lucia's chile-focused cookbook body of work.",
@@ -23,7 +23,7 @@
       "UMF Editorial Team"
     ],
     "attributedChefRefs": [
-      "11111111-1111-4111-8111-111111111111"
+      "cafe0001-0000-4000-8000-000000000001"
     ],
     "orderingPrinciple": "manual",
     "attributionConfidence": "certain",
@@ -34,38 +34,38 @@
   "contents": {
     "recipeRefs": [
       {
-        "recipeRef": "44444444-4444-4444-8444-444444444444",
+        "recipeRef": "beef0004-0000-4000-8000-000000000004",
         "sortOrder": 1,
         "section": "Red Chile Braises",
         "note": "Firelight Tomato Braise from the shared story."
       },
       {
-        "recipeRef": "44444444-4444-4444-8444-444444444445",
+        "recipeRef": "beef0004-0000-4000-8000-000000000005",
         "sortOrder": 2,
         "section": "Red Chile Braises",
         "note": "Companion recipe in the same cookbook chapter."
       },
       {
-        "recipeRef": "44444444-4444-4444-8444-444444444446",
+        "recipeRef": "beef0004-0000-4000-8000-000000000006",
         "sortOrder": 3,
         "section": "Adobo and Marinades",
         "note": "Representative entry showing broader collection scope."
       },
       {
-        "recipeRef": "44444444-4444-4444-8444-444444444447",
+        "recipeRef": "beef0004-0000-4000-8000-000000000007",
         "sortOrder": 4,
         "section": "Salsas and Condiments",
         "note": "Representative entry showing cookbook depth."
       },
       {
-        "recipeRef": "44444444-4444-4444-8444-444444444448",
+        "recipeRef": "beef0004-0000-4000-8000-000000000008",
         "sortOrder": 5,
         "section": "Festival Dishes",
         "note": "Representative entry from seasonal chile chapter."
       }
     ],
     "featuredRecipeRefs": [
-      "44444444-4444-4444-8444-444444444444"
+      "beef0004-0000-4000-8000-000000000004"
     ]
   },
   "lineage": [
