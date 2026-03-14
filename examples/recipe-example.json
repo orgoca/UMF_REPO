@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "Simple Tomato Sauce",
+    "version": "1.0.0",
+    "formatVersion": "1.0",
+    "language": "en",
+    "cuisine": "Italian",
+    "tags": ["sauce", "vegetarian"]
+  },
+  "ingredients": [
+    {
+      "name": "Tomatoes",
+      "amount": 800,
+      "unit": "g",
+      "role": "base",
+      "grocerySection": "Produce"
+    },
+    {
+      "name": "Olive oil",
+      "amount": 2,
+      "unit": "tbsp",
+      "role": "fat",
+      "grocerySection": "Oils & Vinegars"
+    },
+    {
+      "name": "Garlic",
+      "amount": 2,
+      "unit": "cloves",
+      "role": "aroma",
+      "grocerySection": "Produce"
+    }
+  ],
+  "process": [
+    {"step": 1, "instruction": "Heat oil in a saucepan over medium heat."},
+    {"step": 2, "instruction": "Add garlic and cook until fragrant."},
+    {"step": 3, "instruction": "Add tomatoes and simmer for 20 minutes."}
+  ]
+}

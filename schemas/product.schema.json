@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umfspec.org/schemas/product.schema.json",
+  "title": "UMF Product Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "formatVersion"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "formatVersion": {
+      "type": "string"
+    },
+    "ingredientRef": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "vendorRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "packaging": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "string"
+    },
+    "gtin": {
+      "type": "string",
+      "description": "Global Trade Item Number (GS1 standard). Supports GTIN-8, GTIN-12, GTIN-13, and GTIN-14 formats."
+    },
+    "pricing": {
+      "type": "array",
+      "description": "Pricing entries supporting multiple pack sizes, currencies, and temporal pricing.",
+      "items": {
+        "type": "object",
+        "required": [
+          "amount",
+          "currency"
+        ],
+        "properties": {
+          "amount": {
+            "type": "number",
+            "description": "Price amount."
+          },
+          "currency": {
+            "type": "string",
+            "description": "ISO 4217 currency code (e.g. 'USD', 'EUR', 'MXN')."
+          },
+          "packSize": {
+            "type": "string",
+            "description": "Pack size this price applies to (e.g. '400g', '6-pack')."
+          },
+          "unitOfMeasure": {
+            "type": "string",
+            "description": "Normalized unit for price comparison (e.g. 'per_kg', 'per_liter')."
+          },
+          "effectiveDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Date this price became effective."
+          },
+          "sourceSystem": {
+            "type": "string",
+            "description": "Origin system or API that provided this price."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "availability": {
+      "type": "object",
+      "description": "Current stock and availability status.",
+      "properties": {
+        "inStock": {
+          "type": "boolean",
+          "description": "Whether the product is currently in stock."
+        },
+        "stockQuantity": {
+          "type": "number",
+          "description": "Available quantity."
+        },
+        "leadTimeDays": {
+          "type": "number",
+          "description": "Estimated days until delivery or restocking."
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of last availability check."
+        }
+      },
+      "additionalProperties": false
+    },
+    "certifications": {
+      "type": "array",
+      "description": "Product certifications and compliance marks.",
+      "items": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "organic",
+              "halal",
+              "kosher",
+              "fairtrade",
+              "regenerative",
+              "bcorp",
+              "non_gmo",
+              "rainforest_alliance",
+              "msc",
+              "other"
+            ],
+            "description": "Certification category."
+          },
+          "issuer": {
+            "type": "string",
+            "description": "Certifying body or organization."
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Certification expiry date."
+          },
+          "verifiedUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to verification or certificate."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "lotBatchInfo": {
+      "type": "array",
+      "description": "Lot and batch traceability records for recall and provenance tracking.",
+      "items": {
+        "type": "object",
+        "required": [
+          "batchId"
+        ],
+        "properties": {
+          "batchId": {
+            "type": "string",
+            "description": "Lot or batch identifier."
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Batch expiry date."
+          },
+          "harvestDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Harvest or production date."
+          },
+          "countryOfOrigin": {
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2 country code."
+          },
+          "carbonFootprintPerKg": {
+            "type": "number",
+            "description": "Estimated carbon footprint in kg CO₂e per kg of product."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "nutritionPerServing": {
+      "type": "object",
+      "description": "Product-specific nutritional information per serving. Overrides or supplements recipe-level nutrition when present.",
+      "properties": {
+        "serving_size": {
+          "type": "string"
+        },
+        "calories": {
+          "type": "number"
+        },
+        "protein_g": {
+          "type": "number"
+        },
+        "fat_g": {
+          "type": "number"
+        },
+        "saturated_fat_g": {
+          "type": "number"
+        },
+        "carbohydrates_g": {
+          "type": "number"
+        },
+        "fiber_g": {
+          "type": "number"
+        },
+        "sugar_g": {
+          "type": "number"
+        },
+        "sodium_mg": {
+          "type": "number"
+        },
+        "cholesterol_mg": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "array",
+      "description": "Product images, videos, or other media.",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "url"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "video",
+              "audio"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "hero",
+              "step",
+              "scan",
+              "guide",
+              "thumbnail"
+            ],
+            "description": "Semantic role for rendering placement."
+          },
+          "platform": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unitConversions": {
+      "type": "array",
+      "description": "Quantity conversion rules for shopping list aggregation and scaling.",
+      "items": {
+        "type": "object",
+        "required": [
+          "fromUnit",
+          "toUnit",
+          "factor"
+        ],
+        "properties": {
+          "fromUnit": {
+            "type": "string",
+            "description": "Source unit (e.g. 'can', 'piece')."
+          },
+          "toUnit": {
+            "type": "string",
+            "description": "Target unit (e.g. 'g', 'ml')."
+          },
+          "factor": {
+            "type": "number",
+            "description": "Multiplication factor (1 fromUnit = factor × toUnit)."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last document update. Commercial data is time-sensitive."
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Application-specific extensions. Ignored for interoperability. Known namespaces are documented for cross-implementation awareness but are NOT required.",
+      "additionalProperties": true,
+      "properties": {
+        "ai_metadata": {
+          "type": "object",
+          "description": "AI extraction provenance. Known fields: generated_by (string), confidence_score (number 0-1), extracted_from (string), flagged_uncertainties (string[])."
+        },
+        "history": {
+          "type": "array",
+          "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
+        }
+      }
+    }
+  }
+}

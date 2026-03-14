@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umfspec.org/schemas/ingredient.schema.json",
+  "title": "UMF Ingredient Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "canonicalName",
+    "formatVersion"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "canonicalName": {
+      "type": "string"
+    },
+    "formatVersion": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "object",
+      "properties": {
+        "taxonomyRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ingredientType": {
+          "type": "string",
+          "enum": [
+            "plant",
+            "animal",
+            "fungus",
+            "mineral",
+            "compound",
+            "fermented",
+            "seasoning",
+            "fat",
+            "liquid",
+            "other"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "allergens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dietaryFlags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "variations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "ingredientRef": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "substitutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "substitute"
+        ],
+        "properties": {
+          "substitute": {
+            "type": "string"
+          },
+          "ingredientRef": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          },
+          "approximateRatio": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "availability",
+              "dietary",
+              "flavor",
+              "texture",
+              "cost",
+              "regional_adaptation",
+              "other"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Application-specific extensions. Ignored for interoperability. Known namespaces are documented for cross-implementation awareness but are NOT required.",
+      "additionalProperties": true,
+      "properties": {
+        "ai_metadata": {
+          "type": "object",
+          "description": "AI extraction provenance. Known fields: generated_by (string), confidence_score (number 0-1), extracted_from (string), flagged_uncertainties (string[])."
+        },
+        "history": {
+          "type": "array",
+          "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
+        }
+      }
+    }
+  }
+}

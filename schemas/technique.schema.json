@@ -1,0 +1,352 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umfspec.org/schemas/technique.schema.json",
+  "title": "UMF Technique Schema",
+  "description": "A reusable pedagogical cooking technique — structurally parallel to Recipe but uniquely composable. Carries its own ingredients, mise en place, process, sensory checkpoints, and failure modes, plus teaching-specific metadata (mastery, relationships, applications).",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "formatVersion"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "formatVersion": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "ingredients": {
+      "type": "array",
+      "description": "Ingredients specific to this technique (e.g., butter and lemon for a beurre blanc).",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "prep": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "ingredientRef": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "miseEnPlace": {
+      "type": "array",
+      "description": "Preparation state required before executing this technique.",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "required": [
+              "item",
+              "state"
+            ],
+            "properties": {
+              "item": {
+                "type": "string",
+                "description": "Ingredient or prepared component name"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "unit": {
+                "type": "string",
+                "description": "Normalized unit (g, kg, ml, l, tsp, tbsp, cup)"
+              },
+              "state": {
+                "type": "string",
+                "description": "Transformed state ready before execution begins"
+              },
+              "notes": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "process": {
+      "type": "array",
+      "description": "Ordered execution steps. May reference sub-techniques for composed procedures.",
+      "items": {
+        "type": "object",
+        "required": [
+          "step"
+        ],
+        "properties": {
+          "step": {
+            "type": "number"
+          },
+          "instruction": {
+            "type": "string",
+            "description": "Inline instruction when no sub-technique reference is used"
+          },
+          "technique": {
+            "type": "string",
+            "description": "References another technique by ID for composed procedures"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "plating": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Assembly and presentation guidance when the technique produces a platable result."
+    },
+    "sensory_check": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Sensory checkpoints describing how to verify correct execution (e.g. 'sauce coats the back of a spoon')."
+    },
+    "common_errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Common mistakes and how to avoid them."
+    },
+    "nutrition": {
+      "type": "object",
+      "description": "Nutritional information when the technique produces a standalone component.",
+      "properties": {
+        "serving_size": {
+          "type": "string"
+        },
+        "total_yield": {
+          "type": "number"
+        },
+        "source": {
+          "type": "string"
+        },
+        "per_serving": {
+          "type": "object",
+          "properties": {
+            "calories": {
+              "type": "number"
+            },
+            "protein_g": {
+              "type": "number"
+            },
+            "fat_g": {
+              "type": "number"
+            },
+            "saturated_fat_g": {
+              "type": "number"
+            },
+            "carbohydrates_g": {
+              "type": "number"
+            },
+            "fiber_g": {
+              "type": "number"
+            },
+            "sugar_g": {
+              "type": "number"
+            },
+            "sodium_mg": {
+              "type": "number"
+            },
+            "cholesterol_mg": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "array",
+      "description": "Visual and instructional media for this technique.",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "url"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "video",
+              "audio"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "hero",
+              "step",
+              "scan",
+              "guide",
+              "thumbnail"
+            ],
+            "description": "Semantic role for rendering placement."
+          },
+          "platform": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "lineage": {
+      "type": "array",
+      "description": "Provenance and evolution of this technique.",
+      "items": {
+        "type": "object",
+        "required": [
+          "relationship",
+          "techniqueRef"
+        ],
+        "properties": {
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "derived_from",
+              "variation_of",
+              "translation_of",
+              "adaptation_of",
+              "reinterpretation_of",
+              "inspired_by"
+            ]
+          },
+          "techniqueRef": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "mastery": {
+      "type": "object",
+      "description": "Teaching metadata: mastery level, prerequisites, learning goals.",
+      "properties": {
+        "masteryLevel": {
+          "type": "string"
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "learningGoals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "relationships": {
+      "type": "object",
+      "description": "Technique ontology: broader/narrower hierarchies and lateral associations.",
+      "properties": {
+        "relatedTechniques": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "broaderTechnique": {
+          "type": "string"
+        },
+        "narrowerTechniques": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "applications": {
+      "type": "object",
+      "description": "Contextual usage: typical uses, ingredient contexts, cuisine associations.",
+      "properties": {
+        "typicalUses": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ingredientContexts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cuisineAssociations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Application-specific extensions. Ignored for interoperability. Known namespaces are documented for cross-implementation awareness but are NOT required.",
+      "additionalProperties": true,
+      "properties": {
+        "ai_metadata": {
+          "type": "object",
+          "description": "AI extraction provenance. Known fields: generated_by (string), confidence_score (number 0-1), extracted_from (string), flagged_uncertainties (string[])."
+        },
+        "history": {
+          "type": "array",
+          "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
+        }
+      }
+    }
+  }
+}

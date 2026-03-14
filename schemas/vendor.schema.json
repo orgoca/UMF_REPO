@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umfspec.org/schemas/vendor.schema.json",
+  "title": "UMF Vendor Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "formatVersion"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "formatVersion": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri"
+    },
+    "description": {
+      "type": "string"
+    },
+    "productRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gln": {
+      "type": "string",
+      "description": "Global Location Number (GS1 standard) for vendor identification in supply chain systems."
+    },
+    "certifications": {
+      "type": "array",
+      "description": "Vendor-level certifications and compliance marks.",
+      "items": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "organic",
+              "halal",
+              "kosher",
+              "fairtrade",
+              "regenerative",
+              "bcorp",
+              "non_gmo",
+              "rainforest_alliance",
+              "msc",
+              "other"
+            ],
+            "description": "Certification category."
+          },
+          "issuer": {
+            "type": "string",
+            "description": "Certifying body or organization."
+          },
+          "expiryDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Certification expiry date."
+          },
+          "verifiedUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to verification or certificate."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "deliveryOptions": {
+      "type": "array",
+      "description": "Available delivery methods and logistics parameters.",
+      "items": {
+        "type": "object",
+        "required": [
+          "method"
+        ],
+        "properties": {
+          "method": {
+            "type": "string",
+            "description": "Delivery method name (e.g. 'standard_shipping', 'local_pickup', 'same_day')."
+          },
+          "supportedRegions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Regions or zones this method serves."
+          },
+          "cost": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string",
+                "description": "ISO 4217 currency code."
+              }
+            },
+            "additionalProperties": false
+          },
+          "minOrderValue": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "leadTimeDays": {
+            "type": "number",
+            "description": "Estimated delivery time in days."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "apiEndpoint": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional API endpoint for real-time inventory or catalog queries."
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last document update. Commercial data is time-sensitive."
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Application-specific extensions. Ignored for interoperability. Known namespaces are documented for cross-implementation awareness but are NOT required.",
+      "additionalProperties": true,
+      "properties": {
+        "ai_metadata": {
+          "type": "object",
+          "description": "AI extraction provenance. Known fields: generated_by (string), confidence_score (number 0-1), extracted_from (string), flagged_uncertainties (string[])."
+        },
+        "reliability_metrics": {
+          "type": "object",
+          "description": "Vendor trust and performance signals. Incubating — pending production validation for canonical promotion. Known fields: fulfillmentRate (number 0-1), averageResponseHours (number), yearsInBusiness (number), source (string), lastUpdated (ISO 8601)."
+        },
+        "history": {
+          "type": "array",
+          "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,404 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umfspec.org/schemas/recipe.schema.json",
+  "title": "UMF Recipe Schema",
+  "description": "Canonical portable schema for a recipe in the Ummi Markup Format.",
+  "type": "object",
+  "required": [
+    "meta",
+    "ingredients",
+    "process"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "title",
+        "version",
+        "formatVersion"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "authorRef": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "authorDisplay": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "formatVersion": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "cuisine": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "servings": {
+          "type": "number"
+        },
+        "scalingUnit": {
+          "type": "string"
+        },
+        "baseRatio": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "ingredients": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "prep": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "ingredientRef": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "grocerySection": {
+            "type": "string",
+            "description": "Grocery aisle or section for shopping list grouping. Recommended vocabulary: Produce, Meat & Poultry, Seafood, Dairy & Eggs, Bakery & Bread, Pantry & Dry Goods, Canned & Jarred, Frozen, Spices & Seasonings, Oils & Vinegars, Condiments & Sauces, Beverages, Deli, Other."
+          }
+        }
+      }
+    },
+    "techniques": {
+      "type": "array",
+      "description": "Reusable technique definitions local to this recipe. Recipe-level steps are authoritative for this recipe; techniqueRef is a provenance link to the canonical Technique entity.",
+      "items": {
+        "type": "object",
+        "required": [
+          "ref",
+          "steps"
+        ],
+        "properties": {
+          "ref": {
+            "type": "string",
+            "description": "Local identifier for this technique within the recipe"
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable technique name"
+          },
+          "techniqueRef": {
+            "type": "string",
+            "format": "uuid",
+            "description": "UUID reference to a canonical Technique entity. Consumers MUST handle dangling references gracefully."
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Ordered execution steps as used in this recipe"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "miseEnPlace": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "required": [
+              "item",
+              "state"
+            ],
+            "properties": {
+              "item": {
+                "type": "string",
+                "description": "Ingredient or prepared component name"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "unit": {
+                "type": "string",
+                "description": "Normalized unit (g, kg, ml, l, tsp, tbsp, cup)"
+              },
+              "state": {
+                "type": "string",
+                "description": "Transformed state ready before cooking begins"
+              },
+              "notes": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "process": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "step"
+        ],
+        "properties": {
+          "step": {
+            "type": "number"
+          },
+          "instruction": {
+            "type": "string",
+            "description": "Inline instruction when no technique reference is used"
+          },
+          "technique": {
+            "type": "string",
+            "description": "References a techniques[].ref within this document"
+          }
+        }
+      }
+    },
+    "plating": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sensory_check": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "common_errors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nutrition": {
+      "type": "object",
+      "properties": {
+        "serving_size": {
+          "type": "string"
+        },
+        "total_yield": {
+          "type": "number"
+        },
+        "source": {
+          "type": "string"
+        },
+        "per_serving": {
+          "type": "object",
+          "properties": {
+            "calories": {
+              "type": "number"
+            },
+            "protein_g": {
+              "type": "number"
+            },
+            "fat_g": {
+              "type": "number"
+            },
+            "saturated_fat_g": {
+              "type": "number"
+            },
+            "carbohydrates_g": {
+              "type": "number"
+            },
+            "fiber_g": {
+              "type": "number"
+            },
+            "sugar_g": {
+              "type": "number"
+            },
+            "sodium_mg": {
+              "type": "number"
+            },
+            "cholesterol_mg": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "url"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "video",
+              "audio"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "hero",
+              "step",
+              "scan",
+              "guide",
+              "thumbnail"
+            ],
+            "description": "Semantic role for rendering placement. 'hero' = primary cover image. 'step' = inline process/step photo. 'scan' = original source document. 'guide' = instructional video. 'thumbnail' = optimized preview image. Renderers SHOULD use role to determine layout. Items without role default to positional rendering (first = hero)."
+          },
+          "platform": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "lineage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "relationship",
+          "recipeRef"
+        ],
+        "properties": {
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "derived_from",
+              "variation_of",
+              "translation_of",
+              "adaptation_of",
+              "reinterpretation_of",
+              "inspired_by"
+            ]
+          },
+          "recipeRef": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "food_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Broad food classification tags derived from ingredient taxonomy (e.g., 'poultry', 'legumes', 'seafood'). Used for dietary filtering and discovery."
+    },
+    "ingredient_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Flattened ingredient taxonomy categories present in this recipe (e.g., 'chili_pepper', 'root_vegetables', 'dried_herbs'). Enables pantry matching and dietary logic without resolving ingredientRef."
+    },
+    "meal_position": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 10,
+      "description": "Meal context tags indicating when/how a recipe is served (e.g., 'appetizer', 'main-course', 'side-dish', 'dessert', 'snack', 'condiment'). Supports menu planning and contextual discovery."
+    },
+    "shared": {
+      "type": "object",
+      "description": "Document-level sharing and visibility preferences. Implementations MAY extend with platform-specific fields.",
+      "properties": {
+        "visibility": {
+          "type": "string",
+          "enum": [
+            "private",
+            "unlisted",
+            "shared",
+            "public"
+          ],
+          "description": "Access level for this recipe document."
+        },
+        "allow_forks": {
+          "type": "boolean",
+          "description": "Whether other users may fork/derive from this recipe."
+        },
+        "allow_comments": {
+          "type": "boolean",
+          "description": "Whether other users may comment on this recipe."
+        }
+      },
+      "additionalProperties": true
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Application-specific extensions. Ignored for interoperability. Known namespaces are documented for cross-implementation awareness but are NOT required.",
+      "additionalProperties": true,
+      "properties": {
+        "ai_metadata": {
+          "type": "object",
+          "description": "AI extraction provenance. Known fields: generated_by (string), confidence_score (number 0-1), extracted_from (string), flagged_uncertainties (string[])."
+        },
+        "testing_notes": {
+          "type": "object",
+          "description": "Recipe testing records. Known fields: tested_by (string[]), last_tested (date string), outcome (string), modifications (string[])."
+        },
+        "history": {
+          "type": "array",
+          "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
+        }
+      }
+    }
+  }
+}

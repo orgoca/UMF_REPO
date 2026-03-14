@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umfspec.org/schemas/service.schema.json",
+  "title": "UMF Service Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "formatVersion"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "formatVersion": {
+      "type": "string"
+    },
+    "serviceType": {
+      "type": "string",
+      "enum": [
+        "restaurant",
+        "caterer",
+        "meal_kit",
+        "food_truck",
+        "bakery",
+        "other"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri"
+    },
+    "description": {
+      "type": "string"
+    },
+    "chefRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "menuRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "capacity": {
+      "type": "object",
+      "description": "Operational capacity parameters.",
+      "properties": {
+        "dailyCovers": {
+          "type": "number",
+          "description": "Maximum daily covers or servings."
+        },
+        "kitchenSize": {
+          "type": "string",
+          "description": "Kitchen size classification (e.g. 'small', 'commercial', 'industrial')."
+        },
+        "maxEvents": {
+          "type": "number",
+          "description": "Maximum concurrent events for catering services."
+        }
+      },
+      "additionalProperties": false
+    },
+    "operatingHours": {
+      "type": "array",
+      "description": "Weekly operating schedule.",
+      "items": {
+        "type": "object",
+        "required": [
+          "day"
+        ],
+        "properties": {
+          "day": {
+            "type": "string",
+            "enum": [
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday"
+            ],
+            "description": "Day of the week."
+          },
+          "open": {
+            "type": "string",
+            "description": "Opening time in HH:MM format (24h)."
+          },
+          "close": {
+            "type": "string",
+            "description": "Closing time in HH:MM format (24h)."
+          },
+          "closed": {
+            "type": "boolean",
+            "description": "Whether the service is closed on this day."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "serviceAreas": {
+      "type": "array",
+      "description": "Geographic areas served (for delivery, catering, or mobile services).",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pricingModel": {
+      "type": "object",
+      "description": "Pricing structure for the service.",
+      "properties": {
+        "averageCheck": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "type": "number"
+            },
+            "currency": {
+              "type": "string",
+              "description": "ISO 4217 currency code."
+            }
+          },
+          "additionalProperties": false
+        },
+        "perHeadRange": {
+          "type": "object",
+          "description": "Price range per person for catering or events.",
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            },
+            "currency": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "menuPricingRefs": {
+          "type": "array",
+          "description": "UUIDs of Menu entities with associated pricing.",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "specializations": {
+      "type": "array",
+      "description": "Dietary and cuisine specializations this service excels at.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "preferredVendorRefs": {
+      "type": "array",
+      "description": "UUIDs of preferred Vendor entities this service sources from.",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last document update. Commercial data is time-sensitive."
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Application-specific extensions. Ignored for interoperability. Known namespaces are documented for cross-implementation awareness but are NOT required.",
+      "additionalProperties": true,
+      "properties": {
+        "ai_metadata": {
+          "type": "object",
+          "description": "AI extraction provenance. Known fields: generated_by (string), confidence_score (number 0-1), extracted_from (string), flagged_uncertainties (string[])."
+        },
+        "reviews_summary": {
+          "type": "object",
+          "description": "Aggregated review and performance signals. Incubating — pending production validation for canonical promotion. Known fields: averageRating (number 0-5), reviewCount (number), source (string), lastUpdated (ISO 8601)."
+        },
+        "history": {
+          "type": "array",
+          "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
+        }
+      }
+    }
+  }
+}

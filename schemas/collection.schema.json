@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umfspec.org/schemas/collection.schema.json",
+  "title": "UMF Collection Schema",
+  "type": "object",
+  "required": [
+    "meta",
+    "identity"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "id",
+        "formatVersion"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "formatVersion": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "identity": {
+      "type": "object",
+      "required": [
+        "title"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "curation": {
+      "type": "object",
+      "properties": {
+        "collectionType": {
+          "type": "string",
+          "enum": [
+            "author_body_of_work",
+            "family_archive",
+            "regional_archive",
+            "thematic_editorial",
+            "holiday_or_event",
+            "teaching_sequence",
+            "restaurant_menu_archive",
+            "historical_reconstruction",
+            "personal_cookbook",
+            "other"
+          ]
+        },
+        "curatorRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attributedChefRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "orderingPrinciple": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "chronological",
+            "alphabetical",
+            "course_progression",
+            "difficulty_or_mastery",
+            "regional",
+            "seasonal",
+            "other"
+          ]
+        },
+        "attributionConfidence": {
+          "type": "string",
+          "enum": [
+            "certain",
+            "probable",
+            "uncertain",
+            "traditional_attribution",
+            "anonymous"
+          ]
+        },
+        "attributionNotes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "contents": {
+      "type": "object",
+      "properties": {
+        "recipeRefs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "recipeRef"
+            ],
+            "properties": {
+              "recipeRef": {
+                "type": "string"
+              },
+              "sortOrder": {
+                "type": "number"
+              },
+              "section": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "featuredRecipeRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "lineage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "relationship",
+          "collectionRef"
+        ],
+        "properties": {
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "derived_from",
+              "adaptation_of",
+              "translation_of",
+              "reinterpretation_of",
+              "inspired_by",
+              "continuation_of"
+            ]
+          },
+          "collectionRef": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "shared": {
+      "type": "object",
+      "description": "Document-level sharing and visibility preferences. Implementations MAY extend with platform-specific fields.",
+      "properties": {
+        "visibility": {
+          "type": "string",
+          "enum": [
+            "private",
+            "unlisted",
+            "shared",
+            "public"
+          ],
+          "description": "Access level for this collection document."
+        },
+        "allow_forks": {
+          "type": "boolean",
+          "description": "Whether other users may fork/derive from this collection."
+        },
+        "allow_comments": {
+          "type": "boolean",
+          "description": "Whether other users may comment on this collection."
+        }
+      },
+      "additionalProperties": true
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Application-specific extensions. Ignored for interoperability. Known namespaces are documented for cross-implementation awareness but are NOT required.",
+      "additionalProperties": true,
+      "properties": {
+        "ai_metadata": {
+          "type": "object",
+          "description": "AI extraction provenance. Known fields: generated_by (string), confidence_score (number 0-1), extracted_from (string), flagged_uncertainties (string[])."
+        },
+        "testing_notes": {
+          "type": "object",
+          "description": "Recipe testing records. Known fields: tested_by (string[]), last_tested (date string), outcome (string), modifications (string[])."
+        },
+        "history": {
+          "type": "array",
+          "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
+        }
+      }
+    }
+  }
+}

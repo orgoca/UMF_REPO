@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umfspec.org/schemas/chef.schema.json",
+  "title": "UMF Chef Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "displayName",
+    "formatVersion"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "formatVersion": {
+      "type": "string"
+    },
+    "contributorType": {
+      "type": "string",
+      "enum": [
+        "home_cook",
+        "professional",
+        "author",
+        "tester",
+        "editor",
+        "historian",
+        "archivist",
+        "family_source",
+        "institution",
+        "collective",
+        "other"
+      ],
+      "description": "Classification of the contributor's relationship to culinary knowledge. Used for attribution semantics and trust signals."
+    },
+    "biography": {
+      "type": "object",
+      "properties": {
+        "shortBio": {
+          "type": "string"
+        },
+        "longBio": {
+          "type": "string"
+        },
+        "era": {
+          "type": "string"
+        },
+        "birthDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "deathDate": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": false
+    },
+    "geography": {
+      "type": "object",
+      "properties": {
+        "placeOfOrigin": {
+          "type": "string"
+        },
+        "primaryLocation": {
+          "type": "string"
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "diasporaContext": {
+          "type": "string",
+          "description": "Diaspora or migration context relevant to the contributor's culinary identity (e.g. 'Lebanese-Mexican', 'Oaxacan in Los Angeles'). Critical for representing how cuisines travel and evolve across communities."
+        }
+      },
+      "additionalProperties": false
+    },
+    "culinaryProfile": {
+      "type": "object",
+      "properties": {
+        "cuisineAssociations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "specialties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "styleNotes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "lineage": {
+      "type": "object",
+      "properties": {
+        "mentors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "students": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "influences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lineageNotes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "authorship": {
+      "type": "object",
+      "properties": {
+        "knownFor": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attributionConfidence": {
+          "type": "string",
+          "enum": [
+            "certain",
+            "probable",
+            "uncertain",
+            "traditional_attribution",
+            "anonymous"
+          ]
+        },
+        "attributionNotes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "portrait": {
+          "type": "string",
+          "format": "uri"
+        },
+        "externalLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "url"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Application-specific extensions. Ignored for interoperability. Known namespaces are documented for cross-implementation awareness but are NOT required.",
+      "additionalProperties": true,
+      "properties": {
+        "ai_metadata": {
+          "type": "object",
+          "description": "AI extraction provenance. Known fields: generated_by (string), confidence_score (number 0-1), extracted_from (string), flagged_uncertainties (string[])."
+        },
+        "history": {
+          "type": "array",
+          "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
+        }
+      }
+    }
+  }
+}

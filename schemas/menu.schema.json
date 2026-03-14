@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://umfspec.org/schemas/menu.schema.json",
+  "title": "UMF Menu Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "formatVersion"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "formatVersion": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "recipeRef"
+        ],
+        "properties": {
+          "recipeRef": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "course_type": {
+            "type": "string"
+          },
+          "section": {
+            "type": "string"
+          },
+          "pairingWith": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "composition": {
+      "type": "object",
+      "properties": {
+        "sequencingNotes": {
+          "type": "string"
+        },
+        "balanceNotes": {
+          "type": "object",
+          "properties": {
+            "flavor": {
+              "type": "string"
+            },
+            "texture": {
+              "type": "string"
+            },
+            "pacing": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "schedule": {
+      "type": "object",
+      "description": "Date-based meal scheduling for menu planning workflows.",
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "assignments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "date",
+              "recipeRef"
+            ],
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "mealSlot": {
+                "type": "string",
+                "enum": [
+                  "breakfast",
+                  "lunch",
+                  "dinner",
+                  "snack"
+                ]
+              },
+              "recipeRef": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "lineage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "relationship",
+          "menuRef"
+        ],
+        "properties": {
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "derived_from",
+              "variation_of",
+              "seasonal_variant_of",
+              "service_variant_of",
+              "inspired_by"
+            ]
+          },
+          "menuRef": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "shared": {
+      "type": "object",
+      "description": "Document-level sharing and visibility preferences. Implementations MAY extend with platform-specific fields.",
+      "properties": {
+        "visibility": {
+          "type": "string",
+          "enum": [
+            "private",
+            "unlisted",
+            "shared",
+            "public"
+          ],
+          "description": "Access level for this menu document."
+        },
+        "allow_forks": {
+          "type": "boolean",
+          "description": "Whether other users may fork/derive from this menu."
+        },
+        "allow_comments": {
+          "type": "boolean",
+          "description": "Whether other users may comment on this menu."
+        }
+      },
+      "additionalProperties": true
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Application-specific extensions. Ignored for interoperability. Known namespaces are documented for cross-implementation awareness but are NOT required.",
+      "additionalProperties": true,
+      "properties": {
+        "ai_metadata": {
+          "type": "object",
+          "description": "AI extraction provenance. Known fields: generated_by (string), confidence_score (number 0-1), extracted_from (string), flagged_uncertainties (string[])."
+        },
+        "testing_notes": {
+          "type": "object",
+          "description": "Recipe testing records. Known fields: tested_by (string[]), last_tested (date string), outcome (string), modifications (string[])."
+        },
+        "history": {
+          "type": "array",
+          "description": "Version history entries. Known fields per entry: version (string), author (string), timestamp (ISO 8601), notes (string)."
+        }
+      }
+    }
+  }
+}

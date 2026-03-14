@@ -1,0 +1,27 @@
+[project]
+name = "umf-spec"
+version = "1.0.0"
+description = "Canonical reference implementation for the Ummi Markup Format (UMF) schema and documentation."
+authors = [
+  { name = "UMF Specification" }
+]
+license = { text = "CC BY 4.0" }
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.urls]
+"Homepage" = "https://umfspec.org/"
+"Documentation" = "https://umfspec.org/docs"
+"Source" = "https://github.com/umf-spec/umf-spec"
+
+[project.dependencies]
+requests = "^2.30"
+beautifulsoup4 = "^4.12"
+jsonschema = "^4.19"
+
+[tool.black]
+line-length = 88
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
