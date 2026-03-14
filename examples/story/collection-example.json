@@ -3,17 +3,18 @@
     "id": "66666666-6666-4666-8666-666666666666",
     "formatVersion": "1.0",
     "notes": [
-      "Collection documenting the creation and service lifecycle of Firelight Tomato Braise."
+      "Collection representing Chef Lucia's chile-focused cookbook body of work.",
+      "Firelight Tomato Braise is one recipe within a much larger author collection."
     ]
   },
   "identity": {
-    "title": "Chef Lucia Firelight Archive",
-    "subtitle": "Invent, standardize, and serve pipeline",
-    "description": "Curated collection linking inventor, recipe, menu deployment, and service context.",
+    "title": "Lucia's Chile Book",
+    "subtitle": "Author collection of chile-forward recipes",
+    "description": "Cookbook-style collection containing many chile-focused recipes authored by Chef Lucia.",
     "tags": [
       "chef-authored",
-      "catering",
-      "knowledge-graph"
+      "cookbook",
+      "chile-dishes"
     ]
   },
   "curation": {
@@ -35,8 +36,32 @@
       {
         "recipeRef": "44444444-4444-4444-8444-444444444444",
         "sortOrder": 1,
-        "section": "Core Recipes",
-        "note": "Anchor recipe for this story."
+        "section": "Red Chile Braises",
+        "note": "Firelight Tomato Braise from the shared story."
+      },
+      {
+        "recipeRef": "44444444-4444-4444-8444-444444444445",
+        "sortOrder": 2,
+        "section": "Red Chile Braises",
+        "note": "Companion recipe in the same cookbook chapter."
+      },
+      {
+        "recipeRef": "44444444-4444-4444-8444-444444444446",
+        "sortOrder": 3,
+        "section": "Adobo and Marinades",
+        "note": "Representative entry showing broader collection scope."
+      },
+      {
+        "recipeRef": "44444444-4444-4444-8444-444444444447",
+        "sortOrder": 4,
+        "section": "Salsas and Condiments",
+        "note": "Representative entry showing cookbook depth."
+      },
+      {
+        "recipeRef": "44444444-4444-4444-8444-444444444448",
+        "sortOrder": 5,
+        "section": "Festival Dishes",
+        "note": "Representative entry from seasonal chile chapter."
       }
     ],
     "featuredRecipeRefs": [
