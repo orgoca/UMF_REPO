@@ -1,33 +1,23 @@
 # UMF Specification
 
-Canonical schemas and governance for the Ummi Markup Format (UMF).
+Ummi Markup Format (UMF) is an open, schema-versioned standard for representing culinary knowledge as a typed knowledge graph.
 
-UMF is an open, schema-versioned data standard for representing culinary knowledge as a typed knowledge graph.
+UMF is designed for builders who need recipe data that is interoperable, testable, and reusable across products.
 
-## Repository Contract
+## Why UMF Exists
 
-This repository is the source of truth for UMF schemas and specification docs.
+Most recipe formats are document-like and hard to compose across systems.
 
-- `main` and tagged releases are canonical.
-- `umfspec.org` is a publication target built from this repository.
-- If the website and repository ever diverge, the repository wins.
+UMF treats culinary knowledge as structured entities and relationships so teams can:
 
-## What Is In This Repository
+- Share data between apps without brittle transformations.
+- Track provenance, adaptations, and lineage explicitly.
+- Build deterministic dietary and taxonomy logic.
+- Evolve models through versioned schemas instead of ad hoc payload drift.
 
-- Canonical JSON Schema artifacts for all UMF entity types.
-- Human-readable specification docs and governance notes.
-- Example payloads for implementation guidance.
-- Open-source project infrastructure for contribution and review.
+## Core Model
 
-## What Is Not In This Repository
-
-- No schema scraping or sync scripts from the website.
-- No generated artifacts that cannot be traced to commits and releases.
-- No hidden canonical source outside git.
-
-## Entity Coverage
-
-UMF currently defines nine first-class entity schemas:
+UMF currently defines nine first-class entities:
 
 - `recipe`
 - `ingredient`
@@ -38,6 +28,8 @@ UMF currently defines nine first-class entity schemas:
 - `product`
 - `vendor`
 - `service`
+
+Relationships between these entities encode how culinary knowledge is created, organized, and operationalized.
 
 ## UMF Knowledge Graph
 
@@ -106,69 +98,36 @@ flowchart LR
     linkStyle 11 stroke:#D38CFF,stroke-width:2px;
 ```
 
-## Repository Layout
+## Example Payload
 
-- `schemas/`: Canonical JSON Schema files.
-- `docs/`: Specification and governance documentation.
-- `examples/`: Example UMF JSON documents.
+See [examples/recipe-example.json](./examples/recipe-example.json) for a reference document.
 
-Important references:
+## How To Adopt UMF
 
-- Schema guide: [schemas/README.md](./schemas/README.md)
-- Governance model: [docs/governance.md](./docs/governance.md)
-
-## How To Use The Schemas
-
-Use any JSON Schema Draft 2020-12 compatible validator in your runtime or CI pipeline.
-
-Recommended consumption model:
-
-1. Pin to a release tag.
-2. Vendor or reference the schema files from that tag.
-3. Validate producer and consumer payloads in CI.
+1. Choose a release tag.
+2. Use schemas from `schemas/` for that tag.
+3. Validate producer and consumer payloads in CI with a Draft 2020-12 compatible validator.
 4. Upgrade intentionally between schema versions.
 
-## Change Model
+## Versioning
 
-All schema changes must flow through pull requests.
+UMF uses semantic intent:
 
-Required for schema PRs:
+- Patch: editorial/non-breaking fixes.
+- Minor: backwards-compatible additions.
+- Major: breaking changes with migration impact.
 
-1. Clear rationale in the PR description.
-2. Compatibility impact statement.
-3. Example payload changes when behavior changes.
-4. Documentation updates in `docs/` when semantics change.
+## Repository Layout
 
-## Versioning And Releases
-
-UMF follows explicit schema versioning.
-
-- Patch: editorial fixes or non-breaking clarifications.
-- Minor: backwards-compatible additive schema changes.
-- Major: breaking changes requiring migration.
-
-Every released version should map to:
-
-- A git tag.
-- A stable schema set in `schemas/`.
-- A matching website publication.
-
-## Publication Policy
-
-`umfspec.org` should publish from tagged releases of this repository.
-
-Suggested publication pattern:
-
-1. Merge approved PR into `main`.
-2. Create release tag.
-3. Publish site artifacts from that exact tag.
-4. Keep versioned schema URLs immutable.
+- `schemas/`: JSON Schema artifacts.
+- `docs/`: specification and governance docs.
+- `examples/`: sample UMF documents.
 
 ## Contributing
 
-Contribution guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
-
-Code of conduct: [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+- Contribution guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- Governance: [docs/governance.md](./docs/governance.md)
+- Code of conduct: [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
 
 ## License
 
