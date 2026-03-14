@@ -68,3 +68,11 @@ Open an issue for:
 ## Community Standards
 
 By participating, you agree to the [Code of Conduct](./CODE_OF_CONDUCT.md).
+
+## Licensing Of Contributions
+
+By submitting a contribution, you agree that your contribution is licensed
+under this repository's license model:
+
+- Non-code specification content under [CC BY 4.0](./LICENSE).
+- Software code under [MIT](./LICENSE-MIT).

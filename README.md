@@ -131,4 +131,9 @@ UMF uses semantic intent:
 
 ## License
 
-Released under [CC BY 4.0](./LICENSE).
+This repository uses dual licensing by artifact type:
+
+- Specification content (docs, schemas, examples, and prose) is licensed under
+  [CC BY 4.0](./LICENSE).
+- Software code (scripts, tools, libraries, and executable source files) is
+  licensed under [MIT](./LICENSE-MIT).
