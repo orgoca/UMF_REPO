@@ -1,33 +1,57 @@
 {
   "id": "babe0005-0000-4000-8000-000000000005",
-  "title": "Saturday Firelight Supper",
+  "title": "Lucia Wedding Dinner - Spring 2026",
   "formatVersion": "1.0",
-  "description": "Catering menu featuring Chef Lucia's Firelight Tomato Braise as the anchor dish.",
+  "description": "Single-seating wedding dinner curated as appetizer, entree, and dessert with intentional pacing and flavor progression.",
   "entries": [
     {
+      "recipeRef": "a11e000a-0000-4000-8000-00000000000a",
+      "course_type": "appetizer",
+      "section": "First Course",
+      "note": "Light, acidic opener to prepare palate for smoky main course."
+    },
+    {
       "recipeRef": "beef0004-0000-4000-8000-000000000004",
-      "course_type": "main",
-      "section": "Signature Dishes",
-      "note": "Serve with grilled sourdough and charred seasonal vegetables."
+      "course_type": "entree",
+      "section": "Main Course",
+      "note": "Chef Lucia's signature Firelight Tomato Braise served with grilled sourdough and charred seasonal vegetables."
+    },
+    {
+      "recipeRef": "de55e0bb-0000-4000-8000-00000000000b",
+      "course_type": "dessert",
+      "section": "Final Course",
+      "note": "Low-acid sweet finish to close the meal after the savory braise."
     }
   ],
   "composition": {
-    "sequencingNotes": "Begin with lighter starters, then present braise as centerpiece.",
+    "sequencingNotes": "Service plan for a single seating: appetizer opens appetite, entree carries the narrative centerpiece, dessert lands the finish.",
     "balanceNotes": {
-      "flavor": "Smoky and bright with mild heat.",
-      "texture": "Silky sauce over crisp grilled bread.",
-      "pacing": "Best served in second course window."
+      "flavor": "Acid-forward opener, smoky savory center, sweet clean finish.",
+      "texture": "Crisp to silky to soft progression across courses.",
+      "pacing": "Three-course wedding pacing with 20-minute intervals."
     }
   },
   "schedule": {
-    "startDate": "2026-04-01",
-    "endDate": "2026-06-30",
+    "startDate": "2026-05-16",
+    "endDate": "2026-05-16",
     "assignments": [
       {
-        "date": "2026-04-12",
+        "date": "2026-05-16",
+        "mealSlot": "dinner",
+        "recipeRef": "a11e000a-0000-4000-8000-00000000000a",
+        "note": "Course 1 at 19:00."
+      },
+      {
+        "date": "2026-05-16",
         "mealSlot": "dinner",
         "recipeRef": "beef0004-0000-4000-8000-000000000004",
-        "note": "Private event menu rotation."
+        "note": "Course 2 at 19:25."
+      },
+      {
+        "date": "2026-05-16",
+        "mealSlot": "dinner",
+        "recipeRef": "de55e0bb-0000-4000-8000-00000000000b",
+        "note": "Course 3 at 19:50."
       }
     ]
   },
@@ -49,7 +73,7 @@
         "version": "1.0",
         "author": "UMF editorial",
         "timestamp": "2026-03-14T10:06:00Z",
-        "notes": "Initial canonical menu example."
+        "notes": "Reframed as a single-seating curated wedding dinner menu."
       }
     ]
   }
