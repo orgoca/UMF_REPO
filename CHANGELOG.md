@@ -23,6 +23,12 @@ All notable changes to this repository are documented in this file.
 ### Changed
 
 - Story examples updated to include schema version migration fields and taxonomy version linkage.
+- `technique.schema.json` redesigned to pedagogy-first structure:
+  - `meta` block with difficulty/category/timeEstimate
+  - `purpose`, `prerequisites`, `equipment`
+  - instructional `steps[]` with `sensory_cue`, `timing`, and `why`
+  - first-class `failure_modes[]`, `sensory_checkpoints[]`, and `variations[]`
+  - removal of recipe-only concerns from technique modeling (servings/plating/scaling semantics)
 
 ## [1.0.0] - 2026-03-14
 

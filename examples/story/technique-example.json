@@ -1,73 +1,128 @@
 {
   "id": "fade0003-0000-4000-8000-000000000003",
-  "name": "Chile Bloom and Slow Simmer",
-  "formatVersion": "1.0",
-  "description": "Bloom spices in warm fat, then slowly simmer tomato base until glossy and concentrated.",
+  "meta": {
+    "title": "Chile Bloom and Slow Simmer",
+    "authorDisplay": "Chef Lucia Alvarez",
+    "version": "1.0.0",
+    "formatVersion": "1.0",
+    "schema_version": "1.0",
+    "language": "en",
+    "difficulty": "intermediate",
+    "timeEstimate": 25,
+    "category": "sauce-building"
+  },
+  "purpose": "Bloom ground chile in warm fat and simmer a tomato base to build a stable, deeply aromatic sauce foundation.",
+  "prerequisites": [
+    "Roux",
+    "Heat management basics"
+  ],
+  "equipment": [
+    "heavy-bottomed saucepan",
+    "whisk",
+    "wooden spoon"
+  ],
   "ingredients": [
+    {
+      "name": "Olive oil",
+      "amount": 30,
+      "unit": "ml",
+      "prep": "measured",
+      "role": "fat phase"
+    },
     {
       "name": "Smoked Paprika",
       "amount": 4,
       "unit": "g",
-      "role": "aromatic base",
+      "prep": "measured",
+      "role": "aromatic",
       "ingredientRef": "feed0002-0000-4000-8000-000000000002"
-    }
-  ],
-  "miseEnPlace": [
+    },
     {
-      "item": "Tomatoes",
+      "name": "Crushed tomatoes",
       "amount": 800,
       "unit": "g",
-      "state": "crushed",
-      "notes": "Prefer ripe canned whole peeled tomatoes."
-    },
-    "Warm olive oil in saucepan before blooming spices."
-  ],
-  "process": [
-    {
-      "step": 1,
-      "instruction": "Warm olive oil over medium-low heat."
-    },
-    {
-      "step": 2,
-      "instruction": "Add smoked paprika and stir for 20 to 30 seconds."
-    },
-    {
-      "step": 3,
-      "instruction": "Add tomatoes and simmer 20 minutes, stirring occasionally."
+      "prep": "ready to cook",
+      "role": "liquid base"
     }
   ],
-  "plating": [
-    "Spoon over grilled bread or braised proteins."
-  ],
-  "sensory_check": [
-    "Aroma shifts from raw spice to sweet-smoky.",
-    "Sauce coats the back of a spoon."
-  ],
-  "common_errors": [
-    "Overheating paprika causes bitterness."
-  ],
-  "nutrition": {
-    "serving_size": "120 g sauce",
-    "total_yield": 6,
-    "source": "Internal kitchen estimate",
-    "per_serving": {
-      "calories": 78,
-      "protein_g": 1.4,
-      "fat_g": 4.9,
-      "saturated_fat_g": 0.7,
-      "carbohydrates_g": 7.1,
-      "fiber_g": 1.8,
-      "sugar_g": 4.2,
-      "sodium_mg": 210,
-      "cholesterol_mg": 0
+  "steps": [
+    {
+      "instruction": "Warm olive oil over medium-low heat.",
+      "sensory_cue": "Oil looks glossy and fluid but does not shimmer aggressively.",
+      "timing": "1-2 minutes",
+      "why": "Moderate heat protects volatile aromatic compounds from scorching."
+    },
+    {
+      "instruction": "Add smoked paprika and whisk continuously.",
+      "sensory_cue": "Aroma shifts from dusty/raw to sweet-smoky without dark specks.",
+      "timing": "20-30 seconds",
+      "why": "Short blooming extracts fat-soluble flavor molecules while avoiding bitter burn.",
+      "media": {
+        "type": "image",
+        "url": "https://umfspec.org/media/technique-bloom-step.jpg",
+        "role": "step",
+        "label": "Paprika bloom cue"
+      }
+    },
+    {
+      "instruction": "Add crushed tomatoes and stir to fully disperse the spice phase.",
+      "sensory_cue": "Color becomes uniform brick red with no dry spice pockets.",
+      "timing": "1 minute",
+      "why": "Even dispersion prevents hot spots and creates a cohesive emulsion-like sauce texture."
+    },
+    {
+      "instruction": "Simmer gently, stirring periodically until the sauce thickens.",
+      "sensory_cue": "Sauce coats the back of a spoon and leaves a clear line when swiped.",
+      "timing": "18-22 minutes or until cue",
+      "why": "Controlled reduction concentrates flavor and sets a stable viscosity."
     }
-  },
+  ],
+  "failure_modes": [
+    {
+      "symptom": "Sauce tastes bitter and appears dark brown early.",
+      "cause": "Paprika overheated during bloom stage.",
+      "prevention": "Use medium-low heat and keep spices moving constantly.",
+      "recovery": "Restart bloom phase and fold in the affected batch incrementally if salvageable."
+    },
+    {
+      "symptom": "Sauce is watery after simmering.",
+      "cause": "Insufficient reduction time or excessive heat fluctuations.",
+      "prevention": "Maintain gentle simmer and verify spoon-coating cue before finishing.",
+      "recovery": "Continue reducing in 3-minute intervals, stirring and rechecking viscosity."
+    }
+  ],
+  "sensory_checkpoints": [
+    "Bloomed spice aroma is sweet-smoky, not acrid.",
+    "Tomato-spice mixture is uniform in color.",
+    "Final sauce coats spoon with stable sheen."
+  ],
+  "variations": [
+    {
+      "name": "Smoky Mornay-style base",
+      "delta": "Whisk in grated aged cheese off-heat for a richer gratin-ready sauce."
+    },
+    {
+      "name": "Roasted allium variant",
+      "delta": "Fold in roasted garlic puree before final reduction."
+    }
+  ],
+  "cultural_context": "Technique blends sofrito-style blooming with contemporary catering sauce consistency standards.",
+  "notes": [
+    "Keep paprika bloom short; most failures happen in this window.",
+    "If scaling up, widen pan surface area before increasing burner power."
+  ],
   "media": [
     {
       "type": "image",
       "url": "https://umfspec.org/media/technique-bloom.jpg",
       "role": "hero",
-      "label": "Paprika bloom stage"
+      "label": "Finished bloom-and-simmer technique"
+    },
+    {
+      "type": "video",
+      "url": "https://umfspec.org/media/technique-bloom-guide.mp4",
+      "role": "guide",
+      "label": "Full walkthrough"
     }
   ],
   "lineage": [
@@ -77,50 +132,29 @@
       "note": "Inspired by traditional sofrito blooming methods."
     }
   ],
-  "mastery": {
-    "masteryLevel": "intermediate",
-    "prerequisites": [
-      "Heat management basics"
-    ],
-    "learningGoals": [
-      "Extract spice aroma without scorching",
-      "Control reduction and texture"
-    ]
-  },
-  "relationships": {
-    "relatedTechniques": [
-      "Soffritto base"
-    ],
-    "broaderTechnique": "Sauce building",
-    "narrowerTechniques": [
-      "Spice blooming"
-    ]
-  },
-  "applications": {
-    "typicalUses": [
-      "Tomato braises",
-      "Bean stews",
-      "Egg dishes"
-    ],
-    "ingredientContexts": [
-      "Tomato",
-      "Pepper",
-      "Onion"
-    ],
-    "cuisineAssociations": [
-      "Mexican",
-      "Spanish-influenced"
-    ]
-  },
   "extensions": {
+    "testing_notes": {
+      "tested_by": [
+        "Kitchen QA Team"
+      ],
+      "last_tested": "2026-03-10",
+      "outcome": "pass",
+      "modifications": [
+        "Reduced bloom window to 20-30 seconds to reduce bitterness risk."
+      ]
+    },
+    "shared": {
+      "visibility": "public",
+      "allow_forks": true,
+      "allow_comments": true
+    },
     "history": [
       {
-        "version": "1.0",
+        "version": "1.0.0",
         "author": "UMF editorial",
-        "timestamp": "2026-03-14T10:02:00Z",
-        "notes": "Initial canonical technique example."
+        "timestamp": "2026-03-15T12:00:00Z",
+        "notes": "Pedagogy-first technique card aligned to updated technique schema."
       }
     ]
-  },
-  "schema_version": "1.0"
+  }
 }
