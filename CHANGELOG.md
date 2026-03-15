@@ -29,6 +29,7 @@ All notable changes to this repository are documented in this file.
   - instructional `steps[]` with `sensory_cue`, `timing`, and `why`
   - first-class `failure_modes[]`, `sensory_checkpoints[]`, and `variations[]`
   - removal of recipe-only concerns from technique modeling (servings/plating/scaling semantics)
+- Lineage relationship enum in `technique.schema.json` normalized to remove `adapted_from` and use `adaptation_of` consistently with other UMF schemas.
 
 ## [1.0.0] - 2026-03-14
 
